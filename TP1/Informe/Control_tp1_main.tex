@@ -17,8 +17,65 @@
 \tableofcontents
 \newpage
 
-\section*{Ejercicio 1 - Documentación}
-\addcontentsline{toc}{section}{Ejercicio 1 - Documentación}
+\section*{Ejercicio 1: Prelaboratorio}
+\addcontentsline{toc}{section}{Ejercicio 1: Prelaboratorio}
+Se pidió analizar distintas transferencias (en la sección Prelaboratorio) del diagrama en bloques del circuito provisto por la cátedra.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{images/Circuito.PNG}
+\caption{Diagrama en bloques del circuito}
+\label{fig:Circuito}
+\end{figure}
+
+\subsection*{a) Modulador (VCO)}
+
+\begin{equation} \label{mod_eqn}
+\frac{\theta(s)}{V_{in}(s)} = \frac{K_0}{s}
+\end{equation}
+
+\subsection*{b) Demodulador (PLL)}
+
+\begin{equation} \label{demod_eqn}
+\frac{V_f(s)}{\theta(s)} = \frac{s\cdot K_d \cdot F(s)}{s+K_0K_dF(s)}
+\end{equation}
+
+\subsection*{c) Filtros pasabajos: $F_1(s)$ y $F_2(s)$}
+Como $F_1$ es $F_2$ con $R_6$ = 0, se analiza primero $F_2$.
+
+\begin{equation} \label{f2_eqn}
+F_2(s) = \frac{1+\frac{s}{\frac{1}{R_6 \cdot C_6}}}{ 1 + \frac{s}{\frac{1}{\left(R_5+R_6\right)\cdot C_6}}}
+\end{equation}
+
+\begin{equation} \label{f1_eqn}
+F_1(s) = \frac{1}{ 1 + \frac{s}{\frac{1}{R_5\cdot C_6}}}
+\end{equation}
+
+\subsection*{d) $F_0(s)$}
+
+\begin{equation} \label{fo_eqn}
+F_0(s) = \frac{1}{ 1 + \frac{s}{\frac{1}{R_9\cdot C_7}}}
+\end{equation}
+
+
+\section*{Ejercicio 2: factor de amortiguamiento considerando los filtros}
+\addcontentsline{toc}{section}{Ejercicio 2: factor de amortiguamiento considerando los filtros}
+
+
+\begin{equation} \label{vftheta_eqn}
+\frac{V_f(s)}{\theta(s)} = 
+\frac{ 1 + \left(\frac{s}{\frac{1}{(\sqrt{C_6\cdot R_6}}}\right)^2 }
+{ \left(\frac{s}{\omega_0}\right)^2 + 2\xi \omega_0 + 1}
+\end{equation}
+
+\begin{equation} \label{w0_eqn}
+\omega_0 = \sqrt{\frac{K_d K_0}{C_6\cdot(R_5+R_6)}}
+\end{equation}
+
+
+\begin{equation} \label{xi_eqn}
+\xi = \frac{(R_6 \cdot C_6\cdot K_d\cdot K_0  + 1) \sqrt{C_6 \cdot(R_5+R_6)}}
+{2\cdot(K_d\cdot K_0)^\frac{3}{2}}
+\end{equation}
 
 
 \end{document}
