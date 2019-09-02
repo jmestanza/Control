@@ -40,42 +40,61 @@ Se pidió analizar distintas transferencias (en la sección Prelaboratorio) del 
 \end{equation}
 
 \subsection*{c) Filtros pasabajos: $F_1(s)$ y $F_2(s)$}
-Como $F_1$ es $F_2$ con $R_6$ = 0, se analiza primero $F_2$.
-
-\begin{equation} \label{f2_eqn}
-F_2(s) = \frac{1+\frac{s}{\frac{1}{R_6 \cdot C_6}}}{ 1 + \frac{s}{\frac{1}{\left(R_5+R_6\right)\cdot C_6}}}
-\end{equation}
 
 \begin{equation} \label{f1_eqn}
-F_1(s) = \frac{1}{ 1 + \frac{s}{\frac{1}{R_5\cdot C_6}}}
+F_1(s) = \frac{1}{ 1 + \frac{s}{\omega_1}
+}
+\qquad \text{donde} \qquad \omega_1=\frac{1}{R_5\cdot C_6} 
 \end{equation}
+
+
+\begin{equation} \label{f2_eqn}
+F_2(s) = \frac{1+\frac{s}{\omega_2}}{ 1 + \frac{s}{\omega_{eq}}} \qquad \text{donde} \qquad \omega_2=\frac{1}{R_6\cdot C_6} \qquad \omega_{eq} = \frac{1}{\frac{1}{\omega_1} + \frac{1}{\omega_2}} 
+\end{equation}
+
 
 \subsection*{d) $F_0(s)$}
 
 \begin{equation} \label{fo_eqn}
-F_0(s) = \frac{1}{ 1 + \frac{s}{\frac{1}{R_9\cdot C_7}}}
+F_0(s) = \frac{V_{out}(s)}{V_f(s)} = \frac{1}{ 1 + \frac{s}{\omega_0}} \qquad \text{donde} \qquad \omega_0=\frac{1}{R_9\cdot C_7}
 \end{equation}
 
 
 \section*{Ejercicio 2: factor de amortiguamiento considerando los filtros}
 \addcontentsline{toc}{section}{Ejercicio 2: factor de amortiguamiento considerando los filtros}
 
+Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expresiones generales.
 
 \begin{equation} \label{vftheta_eqn}
-\frac{V_f(s)}{\theta(s)} = 
-\frac{ 1 + \left(\frac{s}{\frac{1}{(\sqrt{C_6\cdot R_6}}}\right)^2 }
-{ \left(\frac{s}{\omega_0}\right)^2 + 2\xi \omega_0 + 1}
+\frac{V_f(s)}{\theta(s)} = \frac{C_6 \cdot R_6 \cdot s}{K_0}
+\cdot \frac{ 1 + \frac{s}{\omega_2} }
+{ \left(\frac{s}{\omega_n}\right)^2 + 2\frac{\xi}{\omega_n}  + 1}
 \end{equation}
 
-\begin{equation} \label{w0_eqn}
-\omega_0 = \sqrt{\frac{K_d K_0}{C_6\cdot(R_5+R_6)}}
+\begin{equation} \label{wn_eqn}
+\omega_n = \sqrt{\frac{K_d K_0}{C_6\cdot(R_5+R_6)}}
 \end{equation}
 
 
 \begin{equation} \label{xi_eqn}
-\xi = \frac{(R_6 \cdot C_6\cdot K_d\cdot K_0  + 1) \sqrt{C_6 \cdot(R_5+R_6)}}
-{2\cdot(K_d\cdot K_0)^\frac{3}{2}}
+\xi = \frac{R_6 \cdot C_6\cdot K_d\cdot K_0  + 1}
+{2\cdot \sqrt{C_6 \cdot K_d \cdot K_0 \cdot(R_5 + R_6)}}
 \end{equation}
+
+\section*{Ejercicio 3: Transferencia completa}
+\addcontentsline{toc}{section}{Ejercicio 3: Transferencia completa}
+
+\begin{equation} \label{voutvin_eqn}
+\frac{V_{out}(s)}{V_{in}(s)} = \frac{V_{out}(s)}{V_f(s)} \cdot \frac{V_f(s)}{\theta(s)}\cdot \frac{\theta(s)}{V_{in}(s)}
+\end{equation}
+
+\begin{equation} \label{voutvin_eqn_posta}
+\frac{V_{out}(s)}{V_{in}(s)} = \frac{1}{ 1 + \frac{s}{\omega_0}} \cdot \frac{C_6 \cdot R_6 \cdot s}{K_0}
+\cdot \frac{ 1 + \frac{s}{\omega_2} }
+{ \left(\frac{s}{\omega_n}\right)^2 + 2\frac{\xi}{\omega_n}  + 1} \cdot \frac{K_0}{s}
+\end{equation}
+
+
 
 
 \end{document}

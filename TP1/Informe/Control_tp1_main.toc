@@ -1,3 +1,4 @@
 \babel@toc {spanish}{}
 \contentsline {section}{Ejercicio 1: Prelaboratorio}{2}{section*.2}% 
 \contentsline {section}{Ejercicio 2: factor de amortiguamiento considerando los filtros}{2}{section*.7}% 
+\contentsline {section}{Ejercicio 3: Transferencia completa}{3}{section*.8}% 
