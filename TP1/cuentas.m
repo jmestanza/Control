@@ -27,7 +27,7 @@ VfOverTheta2 = (s*Kd*F2)/(s+Ko*Kd*F2);
 
 [numpol, numfactor] = secOrderFact(num);
 [denpol, denfactor] = secOrderFact(den);
-numpol(end+1) = 0 % habia un bug con una s que no aparecia (coeffs da lo mismo con
+numpol(end+1) = 0; % habia un bug con una s que no aparecia (coeffs da lo mismo con
 % s^2 + s que con s + 1)
 Constant = simplify(numfactor/denfactor);
 
