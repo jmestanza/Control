@@ -1,0 +1,5 @@
+Step_Response:
+Amarilla: señal de entrada (la del generador)
+Verde: señal offseteada (molex de modulacion)
+Violeta: señal de salida en molex demod
+En el resto de los pngs es la señal a la salida
