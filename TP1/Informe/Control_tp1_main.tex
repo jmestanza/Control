@@ -66,7 +66,7 @@ F_0(s) = \frac{V_{out}(s)}{V_f(s)} = \frac{1}{ 1 + \frac{s}{\omega_0}} \qquad \t
 Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expresiones generales.
 
 \begin{equation} \label{vftheta_eqn}
-\frac{V_f(s)}{\theta(s)} = \frac{C_6 \cdot R_6 \cdot s}{K_0}
+\frac{V_f(s)}{\theta(s)} = \frac{ s}{K_0}
 \cdot \frac{ 1 + \frac{s}{\omega_2} }
 { \left(\frac{s}{\omega_n}\right)^2 + 2\frac{\xi}{\omega_n}  + 1}
 \end{equation}
@@ -89,11 +89,13 @@ Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expr
 \end{equation}
 
 \begin{equation} \label{voutvin_eqn_posta}
-\frac{V_{out}(s)}{V_{in}(s)} = \frac{1}{ 1 + \frac{s}{\omega_0}} \cdot \frac{C_6 \cdot R_6 \cdot s}{K_0}
+\frac{V_{out}(s)}{V_{in}(s)} = \frac{1}{ 1 + \frac{s}{\omega_0}} 
 \cdot \frac{ 1 + \frac{s}{\omega_2} }
-{ \left(\frac{s}{\omega_n}\right)^2 + 2\frac{\xi}{\omega_n}  + 1} \cdot \frac{K_0}{s}
+{ \left(\frac{s}{\omega_n}\right)^2 + 2\frac{\xi}{\omega_n}  + 1} 
 \end{equation}
 
+
+\section*{Laboratorio}
 
 \begin{table}[h!]
 	\centering
@@ -107,6 +109,9 @@ Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expr
 	\end{tabular}
 	%
 \end{table}
+Para las cuentas optamos por el valor que más se mantuvo durante las mediciones del VCO que es de:
+\[ K_0= 1Mrad/s/V \]
+
 
 
 \end{document}
