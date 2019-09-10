@@ -20,5 +20,5 @@ wn = ((Kd*Ko)/(C6*(R5 + R6)))^(1/2);
 s = tf('s');
 sys = (Kd*Ko)/((C6*R5*s + 1)*(C7*R9*s + 1)*(s + (Kd*Ko)/(C6*R5*s + 1)));
 step(sys);
-
+stepinfo(sys)
 

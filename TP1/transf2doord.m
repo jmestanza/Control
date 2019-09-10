@@ -18,5 +18,5 @@ R6 = double(solve(xi2 == 0.5, R6));
 
 s = tf('s');
 sys = (Kd*Ko*(C6*R6*s + 1))/((s + (Kd*Ko*(C6*R6*s + 1))/(C6*s*(R5 + R6) + 1))*(C6*s*(R5 + R6) + 1)*(C7*R9*s + 1));
-
 step(sys);
+stepinfo(sys)
