@@ -44,8 +44,8 @@ Fo = 1/(1+s/wo);
 %pretty(simplify(expand(VfOverTheta2)))
 
 % 
-%Transf_1er_orden =  Fo * VfOverTheta1 * (Ko/s)
-% pretty(simplify(Transf_1er_orden))
+%Transf_1er_filtro =  Fo * VfOverTheta1 * (Ko/s)
+% pretty(simplify(Transf_1er_filtro))
 % 
-Transf_2do_orden = Fo * VfOverTheta2* (Ko/s)
-% pretty(simplify(expand(Transf_2do_orden)))
+Transf_2do_filtro = Fo * VfOverTheta2* (Ko/s)
+% pretty(simplify(expand(Transf_2do_filtro)))
