@@ -3,7 +3,6 @@
 % preambulo:
 \input{Control_tp1_preamble.tex}
 
-
 \begin{document}
 
 \newgeometry{} % margenes default para la caratula
@@ -111,6 +110,39 @@ Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expr
 \end{table}
 Para las cuentas optamos por el valor que más se mantuvo durante las mediciones del VCO que es de:
 \[ K_0= 1Mrad/s/V \]
+\todo[inline]{hay que explicar de donde sale que kd es esto pero en mi informe de tc creo que estaba}
+\[ K_d= \frac{V_{cc}}{\pi}\]
+
+\newpage
+
+Se realizaron las respectivas simulaciones y mediciones con F1.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{images/todo.PNG}
+\caption{Simulaciones con el primer tipo de filtro}
+\label{fig:sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/os_and_trise.PNG}
+\caption{Mediciones: Overshoot y rise time}
+\label{fig:osandtr}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/tpeak_vpeak.PNG}
+\caption{Mediciones: peak y peak time}
+\label{fig:peak}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/settling_time.PNG}
+\caption{Mediciones: settling time}
+\label{fig:ts}
+\end{figure}
 
 
 

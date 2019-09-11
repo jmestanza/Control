@@ -28,7 +28,7 @@ VfOverTheta2 = (s*Kd*F2)/(s+Ko*Kd*F2);
 numpol(end+1) = 0; % habia un bug con una s que no aparecia (coeffs da lo mismo con
 % s^2 + s que con s + 1)
 Constant = simplify(numfactor/denfactor);
-wn = sqrt(1/(denpol(1))); % denpol es el termino que acompaña a s^2 en el denominador
+wn = sqrt(1/(denpol(1))); % denpol(1) es el termino que acompaña a s^2 en el denominador
 % 2 xi / wn =  denpol(2); entonces
 xi = denpol(2)*wn/2;
 xi = simplify(xi,'IgnoreAnalyticConstraints',true);
