@@ -1,0 +1,99 @@
+\documentclass{article}
+
+% preambulo:
+\input{Control_tp2_preamble.tex}
+
+\begin{document}
+
+\newgeometry{} % margenes default para la caratula
+% caratula:
+\input{Control_tp2_caratula.tex}
+
+% cambio los margenes para el resto del documento
+\newgeometry{left=2.5cm, top=2.5cm, right=2cm, bottom=2cm}
+
+% indice:
+\tableofcontents
+\newpage
+
+\section{Transferencia del sistema a lazo abierto}
+
+En el circuito que simula el sistema físico, se identifican bloques amplificadores inversores con operacionales. Cuatro de ellos son de ganancia -1 y los otros dos (que definirán las variables de estado) funcionan como integradores. Es decir, su transferencia es del formato:
+
+\[
+H(S) = -\frac{1}{SCR}
+\]
+
+Donde en cada caso, para el primer y segundo integrador respectivamente se obtiene:
+
+\[
+H_1(S) = -\frac{10}{S} \hspace{2cm} H_2(S) = -\frac{1000}{47 \cdot S}
+\]
+
+Finalmente, el diagrama en bloques a lazo abierto queda:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{Imagenes/HLazoAbierto.png}
+\caption{Transferencia del sistema a lazo abierto}
+\label{fig:Circuito}
+\end{figure}
+
+Siendo $X_1$ y $X_2$ las variables de estado. Planteando las transferencias intermedias se obtienen las ecuaciones de estado:
+\[
+\frac{X_2}{U} = \frac{10}{S} \Longrightarrow \dot{x_2} = 10u
+\]
+
+\[
+\frac{X_1}{X_2} = \frac{1000}{47 \cdot S} \Longrightarrow \dot{x_1} = \frac{1000}{47} \cdot x_2
+\]
+La ecuación de salida:
+
+\[
+y = x_1
+\]
+
+Armando el espacio de estados matricial se tiene:
+
+\[
+\begin{bmatrix}
+\dot{x_1} \\
+\dot{x_2} 
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & \frac{1000}{47} \\
+0 & 0 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+x_1 \\
+x_2 
+\end{bmatrix}
++
+\begin{bmatrix}
+0 \\
+10 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+u
+\end{bmatrix}
+\]
+
+\[
+\begin{bmatrix}
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+x_1 \\
+x_2 
+\end{bmatrix}
+\]
+
+\end{document}
