@@ -93,10 +93,12 @@ Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expr
 { \left(\frac{s}{\omega_n}\right)^2 + 2\frac{\xi}{\omega_n}  + 1} 
 \end{equation}
 
+\newpage
 
 \section*{Laboratorio}
-
-\begin{table}[h!]
+Para poder simular la transferencia completa se necesitan hallar los valores $K_0$ y $K_d$.
+Se procedió inyectar una entrada de tensión constante a la entrada del VCO. Con eso se obtuvo la siguiente tabla:
+\begin{table}[H]
 	\centering
 	\caption{Tabla centrada con datos desde ``VCO.csv'}
 	\label{table7}
@@ -108,14 +110,38 @@ Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expr
 	\end{tabular}
 	%
 \end{table}
-Para las cuentas optamos por el valor que más se mantuvo durante las mediciones del VCO que es de:
+
+Como en el trabajo práctico se nos pide entrar al VCO con una señal de 0.5 Vpp y además un offset de 5V, se le da un peso mayor a las mediciones 4, 5 y 6. Con este  criterio optamos por un valor de:
 \[ K_0= 1Mrad/s/V \]
-\todo[inline]{hay que explicar de donde sale que kd es esto pero en mi informe de tc creo que estaba}
-\[ K_d= \frac{V_{cc}}{\pi}\]
+
+Luego, para determinar la constante $K_d$ se consultó la datasheet del CD4046 de Texas Instruments. En la misma se halló el siguiente gráfico:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{images/Kd.jpg}
+\caption{Características del comparador de fase tipo 1 (XOR)}
+\label{fig:comp1}
+\end{figure}
+Por simple inspección nos queda como resultado
+\[ K_d= \frac{V_{DD}}{\pi} \]
+
+
 
 \newpage
+\section*{Mediciones: Filtro con F1 (caso RC)}
 
-Se realizaron las respectivas simulaciones y mediciones con F1.
+Se realizaron las respectivas simulaciones y mediciones con F1 (caso RC).
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/conF1_superpuestas.PNG}
+\caption{Gráfico de las mediciones superpuestas con la curva teórica (caso RC)}
+\label{fig:superpF1}
+\end{figure}
+
+
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{images/todo.PNG}
@@ -143,6 +169,47 @@ Se realizaron las respectivas simulaciones y mediciones con F1.
 \caption{Mediciones: settling time}
 \label{fig:ts}
 \end{figure}
+
+\newpage
+
+\section*{Mediciones: Filtro con F2 (caso RRC)}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/conF2_superpuestas05.PNG}
+\caption{Gráfico de las mediciones superpuestas con la curva teórica (caso RRC)}
+\label{fig:superpF2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/05vpp/simu.PNG}
+\caption{simulación del circuito}
+\label{fig:simu}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/05vpp/os_rt05vpp.PNG}
+\caption{Mediciones del overshoot y risetime}
+\label{fig:os_rt05vpp}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/05vpp/tpeak_vpeak.PNG}
+\caption{medición de peak y peak time}
+\label{fig:tpeak_vpeak}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/05vpp/settling_time.PNG}
+\caption{medición de settling time}
+\label{fig:settling_time}
+\end{figure}
+
 
 
 

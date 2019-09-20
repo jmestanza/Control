@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.24)  11 SEP 2019 00:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.24)  20 SEP 2019 03:32
 entering extended mode
 **./Control_tp1_main.tex
 (Control_tp1_main.tex
@@ -949,56 +949,100 @@ File: images/Circuito.PNG Graphic file (type png)
 <use images/Circuito.PNG>
 Package pdftex.def Info: images/Circuito.PNG  used on input line 24.
 (pdftex.def)             Requested size: 469.47049pt x 220.63039pt.
- [2 <./images/Circuito.PNG>]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 113.
- [3]
-<images/todo.PNG, id=101, 919.93687pt x 536.0025pt>
+ [2 <./images/Circuito.PNG>] [3]
+<images/Kd.jpg, id=95, 355.82938pt x 221.82875pt>
+File: images/Kd.jpg Graphic file (type jpg)
+<use images/Kd.jpg>
+Package pdftex.def Info: images/Kd.jpg  used on input line 120.
+(pdftex.def)             Requested size: 281.68515pt x 175.61171pt.
+ [4 <./images/Kd.jpg>]
+<images/conF1_superpuestas.PNG, id=106, 632.3625pt x 474.27188pt>
+File: images/conF1_superpuestas.PNG Graphic file (type png)
+<use images/conF1_superpuestas.PNG>
+Package pdftex.def Info: images/conF1_superpuestas.PNG  used on input line 137.
+
+(pdftex.def)             Requested size: 375.57782pt x 281.68507pt.
+<images/todo.PNG, id=107, 919.93687pt x 536.0025pt>
 File: images/todo.PNG Graphic file (type png)
 <use images/todo.PNG>
-Package pdftex.def Info: images/todo.PNG  used on input line 121.
+Package pdftex.def Info: images/todo.PNG  used on input line 147.
 (pdftex.def)             Requested size: 469.47049pt x 273.54576pt.
-<images/os_and_trise.PNG, id=102, 1027.84pt x 825.0825pt>
+<images/os_and_trise.PNG, id=108, 1027.84pt x 825.0825pt>
 File: images/os_and_trise.PNG Graphic file (type png)
 <use images/os_and_trise.PNG>
-Package pdftex.def Info: images/os_and_trise.PNG  used on input line 128.
+Package pdftex.def Info: images/os_and_trise.PNG  used on input line 154.
 (pdftex.def)             Requested size: 375.57782pt x 301.48624pt.
-<images/tpeak_vpeak.PNG, id=103, 1027.84pt x 825.0825pt>
+
+[5 <./images/conF1_superpuestas.PNG (PNG copy)> <./images/todo.PNG (PNG copy)>]
+<images/tpeak_vpeak.PNG, id=116, 1027.84pt x 825.0825pt>
 File: images/tpeak_vpeak.PNG Graphic file (type png)
 <use images/tpeak_vpeak.PNG>
-Package pdftex.def Info: images/tpeak_vpeak.PNG  used on input line 135.
+Package pdftex.def Info: images/tpeak_vpeak.PNG  used on input line 161.
 (pdftex.def)             Requested size: 375.57782pt x 301.48624pt.
- [4 <./images/todo.PNG (PNG copy)> <./images/os_and_trise.PNG (PNG copy)>]
-<images/settling_time.PNG, id=110, 1027.84pt x 825.0825pt>
+<images/settling_time.PNG, id=117, 1027.84pt x 825.0825pt>
 File: images/settling_time.PNG Graphic file (type png)
 <use images/settling_time.PNG>
-Package pdftex.def Info: images/settling_time.PNG  used on input line 142.
+Package pdftex.def Info: images/settling_time.PNG  used on input line 168.
 (pdftex.def)             Requested size: 375.57782pt x 301.48624pt.
- [5 <./images/tpeak_vpeak.PNG (PNG copy)> <./images/settling_time.PNG (PNG copy
-)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+[6 <./images/os_and_trise.PNG (PNG copy)> <./images/tpeak_vpeak.PNG (PNG copy)>
+] [7 <./images/settling_time.PNG (PNG copy)>]
+<images/conF2_superpuestas05.PNG, id=130, 632.3625pt x 474.27188pt>
+File: images/conF2_superpuestas05.PNG Graphic file (type png)
+<use images/conF2_superpuestas05.PNG>
+Package pdftex.def Info: images/conF2_superpuestas05.PNG  used on input line 17
+8.
+(pdftex.def)             Requested size: 375.57782pt x 281.68507pt.
+<images/05vpp/simu.PNG, id=131, 632.3625pt x 474.27188pt>
+File: images/05vpp/simu.PNG Graphic file (type png)
+<use images/05vpp/simu.PNG>
+Package pdftex.def Info: images/05vpp/simu.PNG  used on input line 185.
+(pdftex.def)             Requested size: 375.57782pt x 281.68507pt.
+<images/05vpp/os_rt05vpp.PNG, id=132, 1027.84pt x 825.0825pt>
+File: images/05vpp/os_rt05vpp.PNG Graphic file (type png)
+<use images/05vpp/os_rt05vpp.PNG>
+Package pdftex.def Info: images/05vpp/os_rt05vpp.PNG  used on input line 193.
+(pdftex.def)             Requested size: 375.57782pt x 301.48624pt.
+ [8 <./images/conF2_superpuestas05.PNG (PNG copy)> <./images/05vpp/simu.PNG (PN
+G copy)>]
+<images/05vpp/tpeak_vpeak.PNG, id=140, 1027.84pt x 825.0825pt>
+File: images/05vpp/tpeak_vpeak.PNG Graphic file (type png)
+<use images/05vpp/tpeak_vpeak.PNG>
+Package pdftex.def Info: images/05vpp/tpeak_vpeak.PNG  used on input line 200.
+(pdftex.def)             Requested size: 375.57782pt x 301.48624pt.
+<images/05vpp/settling_time.PNG, id=141, 1027.84pt x 825.0825pt>
+File: images/05vpp/settling_time.PNG Graphic file (type png)
+<use images/05vpp/settling_time.PNG>
+Package pdftex.def Info: images/05vpp/settling_time.PNG  used on input line 208
+.
+(pdftex.def)             Requested size: 375.57782pt x 301.48624pt.
+ [9 <./images/05vpp/os_rt05vpp.PNG (PNG copy)> <./images/05vpp/tpeak_vpeak.PNG 
+(PNG copy)>] [10 <./images/05vpp/settling_time.PNG (PNG copy)>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
  (Control_tp1_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 216.
 Package rerunfilecheck Info: File `Control_tp1_main.out' has not changed.
 (rerunfilecheck)             Checksum: 433C3295C8FDFC52414855E99B642A90;236.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 21505 strings out of 492945
- 393904 string characters out of 3135513
- 506549 words of memory out of 3000000
- 24925 multiletter control sequences out of 15000+200000
+ 21497 strings out of 492945
+ 393402 string characters out of 3135513
+ 506974 words of memory out of 3000000
+ 24897 multiletter control sequences out of 15000+200000
  25064 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,15n,85p,817b,875s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,16n,85p,817b,427s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTe
@@ -1016,9 +1060,9 @@ nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmti12.pfb>
-Output written on Control_tp1_main.pdf (6 pages, 403675 bytes).
+Output written on Control_tp1_main.pdf (11 pages, 671667 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 222 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
