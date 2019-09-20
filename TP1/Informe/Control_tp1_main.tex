@@ -112,7 +112,7 @@ Se procedió inyectar una entrada de tensión constante a la entrada del VCO. Co
 \end{table}
 
 Como en el trabajo práctico se nos pide entrar al VCO con una señal de 0.5 Vpp y además un offset de 5V, se le da un peso mayor a las mediciones 4, 5 y 6. Con este  criterio optamos por un valor de:
-\[ K_0= 1Mrad/s/V \]
+\[ K_0= 1Mrad/seg/V \]
 
 Luego, para determinar la constante $K_d$ se consultó la datasheet del CD4046 de Texas Instruments. En la misma se halló el siguiente gráfico:
 \begin{figure}[H]
@@ -122,14 +122,15 @@ Luego, para determinar la constante $K_d$ se consultó la datasheet del CD4046 d
 \label{fig:comp1}
 \end{figure}
 Por simple inspección nos queda como resultado
-\[ K_d= \frac{V_{DD}}{\pi} \]
-
+\[ K_d= \frac{V_{DD}}{\pi} \left(\frac{V}{rad}\right) \]
+Con estos valores y los establecidos por la consigna podemos calcular $\xi$ y $\omega_n$ para cada caso:
+\[ \xi = 0.0886 \qquad \text{donde} \qquad \omega_n = 5.6419\cdot 10^{5} rad/seg \qquad (RC) \]
+Mediante el despeje de la ecuación \ref{xi_eqn} se halló que para que $\xi \approx 0.5$ se necesita una $R_6 = 1.6K\Omega$
+\[ \xi = 0.5014 \qquad \text{donde} \qquad \omega_n = 5.2384\cdot 10^{5} rad/seg \qquad (RRC) \]
 
 
 \newpage
 \section*{Mediciones: Filtro con F1 (caso RC)}
-
-Se realizaron las respectivas simulaciones y mediciones con F1 (caso RC).
 
 
 \begin{figure}[H]
