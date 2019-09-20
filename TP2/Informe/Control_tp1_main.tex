@@ -1,0 +1,35 @@
+\documentclass{article}
+
+% preambulo:
+\input{Control_tp1_preamble.tex}
+
+\begin{document}
+
+\newgeometry{} % margenes default para la caratula
+% caratula:
+\input{Control_tp1_caratula.tex}
+
+% cambio los margenes para el resto del documento
+\newgeometry{left=2.5cm, top=2.5cm, right=2cm, bottom=2cm}
+
+% indice:
+\tableofcontents
+\newpage
+
+\section{Transferencia del sistema a lazo abierto}
+
+En el circuito que simula el sistema físico, se identifican bloques amplificadores inversores con operacionales. Cuatro de ellos son de ganancia -1 y los otros dos (que definirán las variables de estado) funcionan como integradores. Es decir, su transferencia es del formato:
+
+\[
+H(S) = -\frac{1}{SCR}
+\]
+
+Donde en cada caso, para el primer y segundo integrador respectivamente se obtiene:
+
+\[
+H_1(S) = -\frac{10}{S} \hspace{2cm} H_2(S) = -\frac{1000}{47 \cdot S}
+\]
+
+
+
+\end{document}
