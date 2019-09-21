@@ -1,5 +1,0 @@
-Added Component: Designator=J-F(SIP3)
-Add component. Clean all parameters for all variants
-Added Pin To Net: NetName=+12V Pin=J-F-1
-Added Pin To Net: NetName=GND Pin=J-F-2
-Added Pin To Net: NetName=-12V Pin=J-F-3

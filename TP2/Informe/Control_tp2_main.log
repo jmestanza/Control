@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  20 SEP 2019 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  21 SEP 2019 01:55
 entering extended mode
 **./Control_tp2_main.tex
 (Control_tp2_main.tex
@@ -790,6 +790,13 @@ LaTeX Info: Redefining \bm on input line 207.
 (Control_tp2_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
+
+
+LaTeX Warning: Label `fig:Circuito' multiply defined.
+
+
+LaTeX Warning: Label `fig:Circuito' multiply defined.
+
 )
 \openout1 = `Control_tp2_main.aux'.
 
@@ -809,8 +816,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count155
 \scratchdimen=\dimen182
@@ -994,35 +1000,66 @@ l.17 \newpage
               [1
 
 ]
-<Imagenes/HLazoAbierto.png, id=27, 501.67426pt x 119.2455pt>
+<Imagenes/HLazoAbierto.png, id=74, 913.61325pt x 134.30174pt>
 File: Imagenes/HLazoAbierto.png Graphic file (type png)
 <use Imagenes/HLazoAbierto.png>
 Package pdftex.def Info: Imagenes/HLazoAbierto.png  used on input line 37.
-(pdftex.def)             Requested size: 328.6279pt x 78.11455pt.
+(pdftex.def)             Requested size: 328.6279pt x 48.3076pt.
  [2 <./Imagenes/HLazoAbierto.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
+<Imagenes/HLazoCerrado.png, id=82, 1056.94875pt x 375.804pt>
+File: Imagenes/HLazoCerrado.png Graphic file (type png)
+<use Imagenes/HLazoCerrado.png>
+Package pdftex.def Info: Imagenes/HLazoCerrado.png  used on input line 183.
+(pdftex.def)             Requested size: 422.52057pt x 150.22719pt.
+ [3 <./Imagenes/HLazoCerrado.png>]
+<Imagenes/CircuitoRealimentado.png, id=89, 918.43124pt x 348.1005pt>
+File: Imagenes/CircuitoRealimentado.png Graphic file (type png)
+<use Imagenes/CircuitoRealimentado.png>
+Package pdftex.def Info: Imagenes/CircuitoRealimentado.png  used on input line 
+228.
+(pdftex.def)             Requested size: 469.47049pt x 177.93788pt.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 241.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 243.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 243.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 243.
+
+[4 <./Imagenes/CircuitoRealimentado.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 261.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
  (Control_tp2_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 261.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
 Package rerunfilecheck Info: File `Control_tp2_main.out' has not changed.
-(rerunfilecheck)             Checksum: 618D01F37C4FBDD122E646F7DD0DE4EC;76.
+(rerunfilecheck)             Checksum: 29DF9348CA2E5794C6EA141CF2E78F4C;750.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 20971 strings out of 492947
- 385726 string characters out of 3125617
- 495509 words of memory out of 3000000
- 24445 multiletter control sequences out of 15000+200000
- 25064 words of font info for 92 fonts, out of 3000000 for 9000
+ 21062 strings out of 492947
+ 387780 string characters out of 3125617
+ 500626 words of memory out of 3000000
+ 24519 multiletter control sequences out of 15000+200000
+ 26924 words of font info for 99 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,71p,817b,427s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,8n,80p,817b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX
@@ -1030,14 +1067,18 @@ ts/cm/cmbx10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 /Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marcel
 o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Marcelo/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marcelo/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Control_tp2_main.pdf (3 pages, 128349 bytes).
+cm/cmmi12.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmmi7.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marcelo/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marcelo/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/
+Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
+fb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmti12.pfb>
+Output written on Control_tp2_main.pdf (5 pages, 239163 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 6 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 
