@@ -5,8 +5,8 @@
 \contentsline {section}{\numberline {3}Implementaci\IeC {\'o}n}{3}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Simulaci\IeC {\'o}n y Medici\IeC {\'o}n - Comparativa}{4}{subsection.3.1}% 
 \contentsline {subsubsection}{\numberline {3.1.1}Respuesta al escal\IeC {\'o}n}{4}{subsubsection.3.1.1}% 
-\contentsline {subsubsection}{\numberline {3.1.2}Plano de fase}{4}{subsubsection.3.1.2}% 
-\contentsline {section}{\numberline {4}Implementaci\IeC {\'o}n - Caso con $k_2 = 0$}{4}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Simulaci\IeC {\'o}n y Medici\IeC {\'o}n - Comparativa}{4}{subsection.4.1}% 
-\contentsline {subsubsection}{\numberline {4.1.1}Respuesta al escal\IeC {\'o}n}{4}{subsubsection.4.1.1}% 
-\contentsline {subsubsection}{\numberline {4.1.2}Plano de fase}{4}{subsubsection.4.1.2}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Plano de fase}{5}{subsubsection.3.1.2}% 
+\contentsline {section}{\numberline {4}Implementaci\IeC {\'o}n - Caso con $k_2 = 0$}{5}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Simulaci\IeC {\'o}n y Medici\IeC {\'o}n - Comparativa}{5}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Respuesta al escal\IeC {\'o}n}{5}{subsubsection.4.1.1}% 
+\contentsline {subsubsection}{\numberline {4.1.2}Plano de fase}{5}{subsubsection.4.1.2}% 

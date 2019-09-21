@@ -237,9 +237,21 @@ Los puntos de donde parten las resistencias $R_k$ ($A_{k_1}$ y $A_{k_2}$) respec
 
 \subsubsection{Respuesta al escalón}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{../graficos/escalon1.jpg}
+\caption{Circuito realimentado}
+\label{fig:escalonNormal}
+\end{figure}
+
+De las respuestas obtenidas, tanto para el caso simulado como el medido se obtuvo un sobrepico porcentual menor al 20\% como se esperaba. En el caso medido fue de aproximadamente 10\%.
+En la simulación, al ser bloques ideales puede notarse que el error permanente estacionario es nulo, tomando como valor final los 4V del escalón de entrada. En cambio, en el circuito medido, debido a las perturbaciones externas el sistema no llega completamente al valor esperado de 4V y posee un cierto error permanente de 0.2V (dado que llegaba hasta 3.8V). Dado el caso, la implementación real del sistema requeriría aplicar control integral si se busca tener un error permanente nulo.
+
 \subsubsection{Plano de fase}
 
-\todo[inline]{falta poner los graficos y decir algo}
+\todo[inline]{falta poner los graficos}
+
+De los gráficos obtenidos se observa que se corresponden efectivamente con la respuesta de un sistema subamortiguado, dada la forma espiralada. Ésta circula cerrándose hasta finalizar en un punto, verificando que el sistema es estable.
 
 \section{Implementación - Caso con $k_2 = 0$}
 
@@ -255,8 +267,25 @@ Dicha transferencia corresponde a una respuesta senoidal, por lo que se espera o
 
 \subsubsection{Respuesta al escalón}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{../graficos/escalonSinK2.jpg}
+\caption{Circuito realimentado}
+\label{fig:escalonSinK2}
+\end{figure}
+
+De los gráficos obtenidos, como se esperaba en la simulación frente a la entrada escalón el sistema entra en un régimen oscilatorio, cuya frecuencia corresponde a $\omega_n$:
+
+\[
+\omega_n = \sqrt{\frac{10000}{47}} \Longrightarrow T_{OSC} = \frac{2 \pi}{\omega_n} = \textrm{0.43 seg.}
+\]
+
+En la señal medida, se observa también que el sistema comienza a oscilar, pero dada la no idealidad de los operacionales y los componentes, esta presenta una atenuación a lo largo del tiempo (como resulta visible en la gráfica mostrada) no llegando nunca a establecerse a un valor final.
+
 \subsubsection{Plano de fase}
 
-\todo[inline]{aca van los otros graficos y hablar de la oscioacion que en la realidad se atenua obviamente}
+\todo[inline]{aca van los otros graficos}
+
+De los planos obtenidos, se observa que en el caso simulado, como es una oscilación ideal el gráfico resulta ser una circunferencia sin desviaciones. Por el otro lado, en el caso medido al ir atenuándose, el plano sigue la forma de espiral cerrándose, pero nunca llega a establecerse como se mencionó en la respuesta al escalón.
 
 \end{document}

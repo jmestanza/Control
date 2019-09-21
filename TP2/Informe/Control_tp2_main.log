@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  21 SEP 2019 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  21 SEP 2019 13:37
 entering extended mode
 **./Control_tp2_main.tex
 (Control_tp2_main.tex
@@ -790,13 +790,6 @@ LaTeX Info: Redefining \bm on input line 207.
 (Control_tp2_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
-
-
-LaTeX Warning: Label `fig:Circuito' multiply defined.
-
-
-LaTeX Warning: Label `fig:Circuito' multiply defined.
-
 )
 \openout1 = `Control_tp2_main.aux'.
 
@@ -816,7 +809,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count155
 \scratchdimen=\dimen182
@@ -1018,45 +1012,52 @@ File: Imagenes/CircuitoRealimentado.png Graphic file (type png)
 Package pdftex.def Info: Imagenes/CircuitoRealimentado.png  used on input line 
 229.
 (pdftex.def)             Requested size: 469.47049pt x 177.93788pt.
+<../graficos/escalon1.jpg, id=95, 562.1pt x 421.575pt>
+File: ../graficos/escalon1.jpg Graphic file (type jpg)
+<use ../graficos/escalon1.jpg>
+Package pdftex.def Info: ../graficos/escalon1.jpg  used on input line 242.
+(pdftex.def)             Requested size: 328.6279pt x 246.46921pt.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 242.
+ine 252.
+ [4 <./Imagenes/CircuitoRealimentado.png> <../graficos/escalon1.jpg>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 256.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
+(hyperref)                removing `subscript' on input line 256.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 244.
+(hyperref)                removing `math shift' on input line 256.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
-
-[4 <./Imagenes/CircuitoRealimentado.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 262.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 262.
+<../graficos/escalonSinK2.jpg, id=102, 562.1pt x 421.575pt>
+File: ../graficos/escalonSinK2.jpg Graphic file (type jpg)
+<use ../graficos/escalonSinK2.jpg>
+Package pdftex.def Info: ../graficos/escalonSinK2.jpg  used on input line 272.
+(pdftex.def)             Requested size: 328.6279pt x 246.46921pt.
+[5 <../graficos/escalonSinK2.jpg>] [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 291.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
  (Control_tp2_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 262.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 262.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 291.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 291.
 Package rerunfilecheck Info: File `Control_tp2_main.out' has not changed.
 (rerunfilecheck)             Checksum: 9E53F666D9DA2E1FC6C1D624C60EDC53;831.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 21066 strings out of 492947
- 387847 string characters out of 3125617
- 500627 words of memory out of 3000000
- 24522 multiletter control sequences out of 15000+200000
+ 21085 strings out of 492947
+ 388210 string characters out of 3125617
+ 500776 words of memory out of 3000000
+ 24533 multiletter control sequences out of 15000+200000
  26924 words of font info for 99 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,8n,80p,817b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1076,9 +1077,9 @@ Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
 fb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb>
-Output written on Control_tp2_main.pdf (5 pages, 239787 bytes).
+Output written on Control_tp2_main.pdf (7 pages, 292626 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
