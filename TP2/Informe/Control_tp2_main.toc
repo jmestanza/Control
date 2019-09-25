@@ -2,11 +2,11 @@
 \contentsline {section}{\numberline {1}Sistema a lazo abierto}{2}{section.1}% 
 \contentsline {subsection}{\numberline {1.1}An\IeC {\'a}lisis de controlabilidad}{2}{subsection.1.1}% 
 \contentsline {section}{\numberline {2}Dise\IeC {\~n}o de realimentaci\IeC {\'o}n lineal}{3}{section.2}% 
-\contentsline {section}{\numberline {3}Implementaci\IeC {\'o}n}{3}{section.3}% 
+\contentsline {section}{\numberline {3}Implementaci\IeC {\'o}n - Caso $k_2$ = 1.4}{3}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Simulaci\IeC {\'o}n y Medici\IeC {\'o}n - Comparativa}{4}{subsection.3.1}% 
 \contentsline {subsubsection}{\numberline {3.1.1}Respuesta al escal\IeC {\'o}n}{4}{subsubsection.3.1.1}% 
 \contentsline {subsubsection}{\numberline {3.1.2}Plano de fase}{5}{subsubsection.3.1.2}% 
 \contentsline {section}{\numberline {4}Implementaci\IeC {\'o}n - Caso con $k_2 = 0$}{5}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Simulaci\IeC {\'o}n y Medici\IeC {\'o}n - Comparativa}{5}{subsection.4.1}% 
-\contentsline {subsubsection}{\numberline {4.1.1}Respuesta al escal\IeC {\'o}n}{5}{subsubsection.4.1.1}% 
-\contentsline {subsubsection}{\numberline {4.1.2}Plano de fase}{5}{subsubsection.4.1.2}% 
+\contentsline {subsection}{\numberline {4.1}Simulaci\IeC {\'o}n y Medici\IeC {\'o}n - Comparativa}{6}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Respuesta al escal\IeC {\'o}n}{6}{subsubsection.4.1.1}% 
+\contentsline {subsubsection}{\numberline {4.1.2}Plano de fase}{7}{subsubsection.4.1.2}% 

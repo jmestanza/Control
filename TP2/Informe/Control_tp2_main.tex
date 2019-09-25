@@ -210,7 +210,7 @@ Finalmente, la transferencia del sistema a lazo cerrador resulta:
 T(S) = \frac{\frac{1000}{47}}{S^2 + 13.4 \cdot S + \frac{10000}{47}}
 \]
 
-\section{Implementación}
+\section{Implementación - Caso $k_2$ = 1.4}
 
 Para implementar la realimentación, se agregan dos resistencias que den las ganancias $k_1$ y $k_2$ buscadas, siguiendo la configuración del operacional inversor:
 
@@ -239,8 +239,8 @@ Los puntos de donde parten las resistencias $R_k$ ($A_{k_1}$ y $A_{k_2}$) respec
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{../graficos/escalon1.jpg}
-\caption{Circuito realimentado}
+\includegraphics[width=0.8\linewidth]{../graficos/escalon1.jpg}
+\caption{Respuesta al escalón - Caso $k_2$ = 1.4}
 \label{fig:escalonNormal}
 \end{figure}
 
@@ -249,7 +249,12 @@ En la simulación, al ser bloques ideales puede notarse que el error permanente 
 
 \subsubsection{Plano de fase}
 
-\todo[inline]{falta poner los graficos}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{../graficos-xy/xy.png}
+\caption{Plano de fase - Caso $k_2$ = 1.4}
+\label{fig:escalonNormal}
+\end{figure}
 
 De los gráficos obtenidos se observa que se corresponden efectivamente con la respuesta de un sistema subamortiguado, dada la forma espiralada. Ésta circula cerrándose hasta finalizar en un punto, verificando que el sistema es estable.
 
@@ -269,8 +274,8 @@ Dicha transferencia corresponde a una respuesta senoidal, por lo que se espera o
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{../graficos/escalonSinK2.jpg}
-\caption{Circuito realimentado}
+\includegraphics[width=0.8\linewidth]{../graficos/escalonSinK2.jpg}
+\caption{Respuesta al escalón - Caso $k_2$ = 0}
 \label{fig:escalonSinK2}
 \end{figure}
 
@@ -284,7 +289,12 @@ En la señal medida, se observa también que el sistema comienza a oscilar, pero
 
 \subsubsection{Plano de fase}
 
-\todo[inline]{aca van los otros graficos}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{../graficos-xy/xy-sin-k.png}
+\caption{Respuesta al escalón - Caso $k_2$ = 0}
+\label{fig:escalonSinK2}
+\end{figure}
 
 De los planos obtenidos, se observa que en el caso simulado, como es una oscilación ideal el gráfico resulta ser una circunferencia sin desviaciones. Por el otro lado, en el caso medido al ir atenuándose, el plano sigue la forma de espiral cerrándose, pero nunca llega a establecerse como se mencionó en la respuesta al escalón.
 
