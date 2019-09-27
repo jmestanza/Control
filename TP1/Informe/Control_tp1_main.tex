@@ -212,6 +212,17 @@ Mediante el despeje de la ecuación \ref{xi_eqn} se halló que para que $\xi \ap
 \end{figure}
 
 
+\section*{Filtro de salida}
+La función que cumple el filtro de salida es fundamentalmente la de permitir obtener una señal salida mas limpia con respecto al ruido filtrando este y, ademas, eliminar las oscilaciones de alta frecuencia que pudieran no haber sido atenuadas adecuadamente por el filtro LF en cualquiera de las topologias que se presentaron para dicho filtro.
+Desde un punto de vista teórico esta etapa no afectará la transferencia del PLL propiamente dicho, ya que se localiza a la salida de este, pero si tendrá influencia en la transferencia del sistema total. Según los valores propuestos para el resistor y el capacitor por la cátedra se tendrá que la constante de tiempo será de 560ns. Dicha constante afectará de forma significativa el sistema ya que cuanto menor sea esta menor será el tiempo en el que el sistema alcance el valor de la señal, pero mayor será su ancho de banda, y vice-versa.
 
+
+\newpage
+
+\section*{Conclusiones}
+Se ha estudiando el proceso de diseño y las bases teóricas que sostienen el funcionamiento del PLL. Las pruebas realizadas sobre el mismo consistieron fundamentalmente en observar y analizar la respuesta dinámica del sistema al escalón realizando una comparación con los cálculos teóricos previos y las simulaciones hechas.
+Al momento de operar con el filtro F1 (RC) según lo obtenido teóricamente se esperaba obtener un porcentaje de overshoot de 0.72 así como un rise time de 2.1 useg y settling time de 74.4 useg, a lo cual en la practica finalmente se obtuvo un porcentaje de 0.74, un rise time de 2.2 useg y un settling time de 81 useg. Con esto las mediciones tomadas se consideran satisfactorias. 
+Por otro lado al utilizar el filtro F2 (RRC) los parámetros predichos por la teoría fueron de un overshoot de 0.24, un rise time de 2.3 useg y un settling time de 14.9 useg; pasando la practica lo que se obtuvo fue un overshoot de 0.18, un rise time de 2.5 useg y un settling time de 12.5 useg. Nuevamente se observa que los valores obtenidos representan fielmente a los obtenidos realizando el calculo teórico previo y simulado.
+Con todo se pudo analizar y observar correctamente el funcionamiento del PLL como un sistema del control realimentado el cual entre otras cosas permitirá realizar la demodulacion de una señal modulada en FM, dados los parametros de trabajo adecuados, debido a dicho control que se realiza sobre la señal.
 
 \end{document}
