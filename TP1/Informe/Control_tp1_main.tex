@@ -58,11 +58,12 @@ F_2(s) = \frac{1+\frac{s}{\omega_2}}{ 1 + \frac{s}{\omega_{eq}}} \qquad \text{do
 F_0(s) = \frac{V_{out}(s)}{V_f(s)} = \frac{1}{ 1 + \frac{s}{\omega_0}} \qquad \text{donde} \qquad \omega_0=\frac{1}{R_9\cdot C_7}
 \end{equation}
 
+\newpage
 
-\section*{Ejercicio 2: factor de amortiguamiento considerando los filtros}
+\section*{Ejercicio 2: Factor de amortiguamiento considerando los filtros}
 \addcontentsline{toc}{section}{Ejercicio 2: factor de amortiguamiento considerando los filtros}
 
-Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expresiones generales.
+Notar que lo que cambia entre los filtros es $R_6$, así que dejamos las expresiones generales.
 
 \begin{equation} \label{vftheta_eqn}
 \frac{V_f(s)}{\theta(s)} = \frac{ s}{K_0}
@@ -96,11 +97,11 @@ Notar que lo que cambia entre los filtros es $R_6 = 0$ así que dejamos las expr
 \newpage
 
 \section*{Laboratorio}
+\addcontentsline{toc}{section}{Laboratorio}
 Para poder simular la transferencia completa se necesitan hallar los valores $K_0$ y $K_d$.
-Se procedió inyectar una entrada de tensión constante a la entrada del VCO. Con eso se obtuvo la siguiente tabla:
+Para esto, se procedió inyectar una entrada de tensión continua a la entrada del VCO, variando su valor en el rango de 1V a 10V. Con eso se obtuvo la siguiente tabla:
 \begin{table}[H]
 	\centering
-	\caption{Tabla centrada con datos desde ``VCO.csv'}
 	\label{table7}
 	\begin{tabular}{c c c c c}%
 		\bfseries \# & $\bm{DC_{IN}(V)}$ & $\bm{freq_{out}(KHz)}$ & $\bm{K_0(rad/seg/V)}$  \\ \hline
@@ -108,11 +109,11 @@ Se procedió inyectar una entrada de tensión constante a la entrada del VCO. Co
 		%DC_IN(V),freq_out(KHz),K0 ((rad/seg)/V)
 		\hline
 	\end{tabular}
-	%
+		\caption{Tabla centrada con datos obtenidos}
 \end{table}
 
-Como en el trabajo práctico se nos pide entrar al VCO con una señal de 0.5 Vpp y además un offset de 5V, se le da un peso mayor a las mediciones 4, 5 y 6. Con este  criterio optamos por un valor de:
-\[ K_0= 1Mrad/seg/V \]
+Como se solicita ingresar al VCO con una señal de 0.5 Vpp y además un offset de 5V, se le da un peso mayor a las mediciones 4, 5 y 6. Con este  criterio, se optó por un valor para $K_0$ de:
+\[ K_0= 1M \left[\frac{rad \cdot seg}{V}\right] \]
 
 Luego, para determinar la constante $K_d$ se consultó la datasheet del CD4046 de Texas Instruments. En la misma se halló el siguiente gráfico:
 \begin{figure}[H]
@@ -122,21 +123,21 @@ Luego, para determinar la constante $K_d$ se consultó la datasheet del CD4046 d
 \label{fig:comp1}
 \end{figure}
 Por simple inspección nos queda como resultado
-\[ K_d= \frac{V_{DD}}{\pi} \left(\frac{V}{rad}\right) \]
+\[ K_d= \frac{V_{DD}}{\pi} \left[\frac{V}{rad}\right] \]
 Con estos valores y los establecidos por la consigna podemos calcular $\xi$ y $\omega_n$ para cada caso:
-\[ \xi = 0.0886 \qquad \text{donde} \qquad \omega_n = 5.6419\cdot 10^{5} rad/seg \qquad (RC) \]
+\[ \xi = 0.0886 \qquad \text{donde} \qquad \omega_n = 5.6419\cdot 10^{5} \left[\frac{rad}{seg}\right] \qquad (RC) \]
 Mediante el despeje de la ecuación \ref{xi_eqn} se halló que para que $\xi \approx 0.5$ se necesita una $R_6 = 1.6K\Omega$
-\[ \xi = 0.5014 \qquad \text{donde} \qquad \omega_n = 5.2384\cdot 10^{5} rad/seg \qquad (RRC) \]
+\[ \xi = 0.5014 \qquad \text{donde} \qquad \omega_n = 5.2384\cdot 10^{5} \left[\frac{rad}{seg}\right] \qquad (RRC) \]
 
 
 \newpage
-\section*{Mediciones: Filtro con F1 (caso RC)}
-
+\section*{Mediciones: Filtro con F1 - Caso RC}
+\addcontentsline{toc}{section}{Mediciones: Filtro con F1 - Caso RC}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/conF1_superpuestas.PNG}
-\caption{Gráfico de las mediciones superpuestas con la curva teórica (caso RC)}
+\caption{Mediciones superpuestas con la curva teórica - Caso RC}
 \label{fig:superpF1}
 \end{figure}
 
@@ -146,45 +147,47 @@ Mediante el despeje de la ecuación \ref{xi_eqn} se halló que para que $\xi \ap
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{images/todo.PNG}
-\caption{Simulaciones con el primer tipo de filtro}
+\caption{Simulaciones con el filtro RC}
 \label{fig:sim}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/os_and_trise.PNG}
-\caption{Mediciones: Overshoot y rise time}
+\caption{Mediciones: Overshoot y Rise Time}
 \label{fig:osandtr}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/tpeak_vpeak.PNG}
-\caption{Mediciones: peak y peak time}
+\caption{Mediciones: Peak Value y Peak Time}
 \label{fig:peak}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/settling_time.PNG}
-\caption{Mediciones: settling time}
+\caption{Mediciones: Settling Time}
 \label{fig:ts}
 \end{figure}
 
 \newpage
 
-\section*{Mediciones: Filtro con F2 (caso RRC)}
+\section*{Mediciones: Filtro con F2 - Caso RRC}
+\addcontentsline{toc}{section}{Mediciones: Filtro con F2 - Caso RRC}
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/conF2_superpuestas05.PNG}
-\caption{Gráfico de las mediciones superpuestas con la curva teórica (caso RRC)}
+\caption{Mediciones superpuestas con la curva teórica - Caso RRC}
 \label{fig:superpF2}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/05vpp/simu.PNG}
-\caption{simulación del circuito}
+\caption{Simulaciones con el filtro RRC}
 \label{fig:simu}
 \end{figure}
 
@@ -192,14 +195,14 @@ Mediante el despeje de la ecuación \ref{xi_eqn} se halló que para que $\xi \ap
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/05vpp/os_rt05vpp.PNG}
-\caption{Mediciones del overshoot y risetime}
+\caption{Mediciones: Overshoot y Rise Time}
 \label{fig:os_rt05vpp}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/05vpp/tpeak_vpeak.PNG}
-\caption{medición de peak y peak time}
+\caption{Mediciones: Peak Value y Peak Time}
 \label{fig:tpeak_vpeak}
 \end{figure}
 
@@ -207,22 +210,37 @@ Mediante el despeje de la ecuación \ref{xi_eqn} se halló que para que $\xi \ap
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/05vpp/settling_time.PNG}
-\caption{medición de settling time}
+\caption{Mediciones: Settling Time}
 \label{fig:settling_time}
 \end{figure}
 
 
 \section*{Filtro de salida}
-La función que cumple el filtro de salida es fundamentalmente la de permitir obtener una señal salida mas limpia con respecto al ruido filtrando este y, ademas, eliminar las oscilaciones de alta frecuencia que pudieran no haber sido atenuadas adecuadamente por el filtro LF en cualquiera de las topologias que se presentaron para dicho filtro.
-Desde un punto de vista teórico esta etapa no afectará la transferencia del PLL propiamente dicho, ya que se localiza a la salida de este, pero si tendrá influencia en la transferencia del sistema total. Según los valores propuestos para el resistor y el capacitor por la cátedra se tendrá que la constante de tiempo será de 560ns. Dicha constante afectará de forma significativa el sistema ya que cuanto menor sea esta menor será el tiempo en el que el sistema alcance el valor de la señal, pero mayor será su ancho de banda, y vice-versa.
+\addcontentsline{toc}{section}{Filtro de salida}
+Dado que a la salida del comparador de fase del sistema PLL presenta cambios abruptos, al ir conectada a la entrada del VCO se terminan traduciendo en cambios abruptos en la frecuencia de la señal de salida del VCO (dado que la misma varía con la tensión a su entrada). Por este motivo, entre medio de ambos bloques se coloca un filtro pasabajos para suavizar dichos cambios. Para implementarlo se presentaron dos opciones (RC y RRC), obteniendo resultados que muestran diferencias claras entre ambos:\par
+En el caso del RC, se logran filtrar las altas frecuencias satisfactoriamente, pero no termina permitiendo modificar el factor de amortiguamiento. En cambio, el caso con RRC permite modificar el factor de amortiguamiento, pero al ser una transferencia que mantiene la forma pasabajos hasta un determinado valor y luego se vuelve constante, las altas frecuencias terminan ingresando (aunque más atenuadas).
 
+Desde un punto de vista teórico esta etapa no afecta la transferencia del PLL propiamente dicho, ya que se localiza a la salida de éste, pero si tiene influencia en la transferencia del sistema total. Según los valores propuestos por la cátedra para el resistor y el capacitor se tiene que la constante de tiempo es de 560ns. Dicha constante afecta de forma significativa el sistema ya que cuanto menor sea esta menor es el tiempo que demora el sistema en que la señal de salida alcance el valor final, pero mayor será su ancho de banda, y viceversa.
+A modo de comparación se muestran los resultados característicos obtenidos en cada caso.
+
+\begin{table}[H]
+	\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{}                & Overshoot (\%) & Rise Time & Settling Time \\ \hline
+\multirow{2}{*}{Filtro RC}  & Teórico & 0.72           & 2.1 us    & 74.4 us       \\ \cline{2-5} 
+                            & Medido  & 0.74           & 2.2 us    & 81 us         \\ \hline
+\multirow{2}{*}{Filtro RRC} & Teórico & 0.24           & 2.3 us    & 14.9 us       \\ \cline{2-5} 
+                            & Medido  & 0.18           & 2.5 us    & 12.5 us       \\ \hline
+\end{tabular}
+	\caption{Tabla centrada con datos característicos}
+\end{table}
 
 \newpage
 
 \section*{Conclusiones}
-Se ha estudiando el proceso de diseño y las bases teóricas que sostienen el funcionamiento del PLL. Las pruebas realizadas sobre el mismo consistieron fundamentalmente en observar y analizar la respuesta dinámica del sistema al escalón realizando una comparación con los cálculos teóricos previos y las simulaciones hechas.
-Al momento de operar con el filtro F1 (RC) según lo obtenido teóricamente se esperaba obtener un porcentaje de overshoot de 0.72 así como un rise time de 2.1 useg y settling time de 74.4 useg, a lo cual en la practica finalmente se obtuvo un porcentaje de 0.74, un rise time de 2.2 useg y un settling time de 81 useg. Con esto las mediciones tomadas se consideran satisfactorias. 
-Por otro lado al utilizar el filtro F2 (RRC) los parámetros predichos por la teoría fueron de un overshoot de 0.24, un rise time de 2.3 useg y un settling time de 14.9 useg; pasando la practica lo que se obtuvo fue un overshoot de 0.18, un rise time de 2.5 useg y un settling time de 12.5 useg. Nuevamente se observa que los valores obtenidos representan fielmente a los obtenidos realizando el calculo teórico previo y simulado.
-Con todo se pudo analizar y observar correctamente el funcionamiento del PLL como un sistema del control realimentado el cual entre otras cosas permitirá realizar la demodulacion de una señal modulada en FM, dados los parametros de trabajo adecuados, debido a dicho control que se realiza sobre la señal.
+\addcontentsline{toc}{section}{Conclusiones}
+Se ha estudiando el proceso de diseño y las bases teóricas que sostienen el funcionamiento del PLL. Las pruebas realizadas sobre el mismo consistieron fundamentalmente en observar y analizar la respuesta dinámica del sistema al escalón realizando una comparación con los cálculos teóricos previos y las simulaciones hechas, para los distintos filtros sugeridos.\par
+Observando los resultados obtenidos, se deja en evidencia que cada filtro proporciona una ventaja particular permitiendo controlar un determinado parámetro del sistema, pero no pudiendo modificar otro, como se analizó previamente sobre la etapa del filtrado de la salida. Con todo lo anterior se pudo analizar y observar correctamente el funcionamiento del PLL como un sistema del control realimentado el cual entre otras cosas permitirá realizar la demodulacion de una señal de FM, dados los parámetros de trabajo adecuados, debido a dicho control que se realiza sobre la señal.
 
 \end{document}

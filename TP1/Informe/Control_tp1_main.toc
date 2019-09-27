@@ -1,4 +1,9 @@
 \babel@toc {spanish}{}
 \contentsline {section}{Ejercicio 1: Prelaboratorio}{2}{section*.2}% 
-\contentsline {section}{Ejercicio 2: factor de amortiguamiento considerando los filtros}{2}{section*.7}% 
+\contentsline {section}{Ejercicio 2: factor de amortiguamiento considerando los filtros}{3}{section*.7}% 
 \contentsline {section}{Ejercicio 3: Transferencia completa}{3}{section*.8}% 
+\contentsline {section}{Laboratorio}{4}{section*.9}% 
+\contentsline {section}{Mediciones: Filtro con F1 - Caso RC}{5}{section*.10}% 
+\contentsline {section}{Mediciones: Filtro con F2 - Caso RRC}{8}{section*.11}% 
+\contentsline {section}{Filtro de salida}{10}{section*.12}% 
+\contentsline {section}{Conclusiones}{11}{section*.13}% 
