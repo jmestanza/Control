@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  27 SEP 2019 17:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  6 NOV 2019 18:31
 entering extended mode
-**./Control_tp2_main.tex
-(Control_tp2_main.tex
+**./Control_tp3_main.tex
+(Control_tp3_main.tex
 LaTeX2e <2018-12-01>
 ("C:\Users\Marcelo\AppData\Local\Programs\MiKTeX 2.9\tex/latex\base\article.cls
 "
@@ -20,7 +20,7 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (Control_tp2_preamble.tex
+) (Control_tp3_preamble.tex
 ("C:\Users\Marcelo\AppData\Local\Programs\MiKTeX 2.9\tex/latex\base\inputenc.st
 y"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
@@ -787,36 +787,51 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
-(Control_tp2_main.aux
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip57
+\f@nch@O@elh=\skip58
+\f@nch@O@erh=\skip59
+\f@nch@O@olh=\skip60
+\f@nch@O@orh=\skip61
+\f@nch@O@elf=\skip62
+\f@nch@O@erf=\skip63
+\f@nch@O@olf=\skip64
+\f@nch@O@orf=\skip65
+)
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (433.62pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (578.15999pt) is ignored.
+
+(Control_tp3_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
-
-
-LaTeX Warning: Label `fig:escalonNormal' multiply defined.
-
-
-LaTeX Warning: Label `fig:escalonSinK2' multiply defined.
-
 )
-\openout1 = `Control_tp2_main.aux'.
+\openout1 = `Control_tp3_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Info: Redefining \. on input line 18.
+LaTeX Info: Redefining \% on input line 18.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count155
 \scratchdimen=\dimen182
@@ -853,15 +868,15 @@ G,.JBIG2,.JB2,.eps]
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(81.94394pt, 433.62pt, 81.94394pt)
-* v-part:(T,H,B)=(106.75473pt, 578.15999pt, 160.13213pt)
+* h-part:(L,W,R)=(64.01869pt, 469.47049pt, 64.01869pt)
+* v-part:(T,H,B)=(71.13188pt, 717.00946pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=433.62pt
-* \textheight=578.15999pt
-* \oddsidemargin=9.67395pt
-* \evensidemargin=9.67395pt
-* \topmargin=-2.51526pt
+* \textwidth=469.47049pt
+* \textheight=717.00946pt
+* \oddsidemargin=-8.2513pt
+* \evensidemargin=-8.2513pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -881,7 +896,7 @@ G,.JBIG2,.JB2,.eps]
 
 \c@lstlisting=\count161
 \AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring OFF on input line 6.
+Package hyperref Info: Link coloring OFF on input line 18.
 
 ("C:\Users\Marcelo\AppData\Local\Programs\MiKTeX 2.9\tex/latex\hyperref\nameref
 .sty"
@@ -893,47 +908,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count162
 )
-LaTeX Info: Redefining \ref on input line 6.
-LaTeX Info: Redefining \pageref on input line 6.
-LaTeX Info: Redefining \nameref on input line 6.
- (Control_tp2_main.out) (Control_tp2_main.out)
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
+ (Control_tp3_main.out) (Control_tp3_main.out)
 \@outlinefile=\write5
-\openout5 = `Control_tp2_main.out'.
-
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
-* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=418.25368pt
-* \textheight=591.5302pt
-* \oddsidemargin=17.3571pt
-* \evensidemargin=17.3571pt
-* \topmargin=-7.86334pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+\openout5 = `Control_tp3_main.out'.
 
 
-(Control_tp2_caratula.tex
+(Control_tp3_caratula.tex
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 (Font)              using `OT1/cmr/bx/n' instead on input line 4.
@@ -950,150 +933,49 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 9.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-
 {C:/Users/Marcelo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(71.13188pt, 469.47049pt, 56.9055pt)
-* v-part:(T,H,B)=(71.13188pt, 717.00946pt, 56.9055pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=469.47049pt
-* \textheight=717.00946pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-38.1381pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-
-(Control_tp2_main.toc
+(Control_tp3_main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write6
-\openout6 = `Control_tp2_main.toc'.
+\openout6 = `Control_tp3_main.toc'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.17 \newpage
-              [1
-
-]
-<Imagenes/HLazoAbierto.png, id=79, 913.61325pt x 134.30174pt>
-File: Imagenes/HLazoAbierto.png Graphic file (type png)
-<use Imagenes/HLazoAbierto.png>
-Package pdftex.def Info: Imagenes/HLazoAbierto.png  used on input line 37.
-(pdftex.def)             Requested size: 328.6279pt x 48.3076pt.
- [2 <./Imagenes/HLazoAbierto.png>]
-<Imagenes/HLazoCerrado.png, id=87, 1056.94875pt x 375.804pt>
-File: Imagenes/HLazoCerrado.png Graphic file (type png)
-<use Imagenes/HLazoCerrado.png>
-Package pdftex.def Info: Imagenes/HLazoCerrado.png  used on input line 184.
-(pdftex.def)             Requested size: 422.52057pt x 150.22719pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 213.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
-
-[3 <./Imagenes/HLazoCerrado.png>]
-<Imagenes/CircuitoRealimentado.png, id=95, 918.43124pt x 348.1005pt>
-File: Imagenes/CircuitoRealimentado.png Graphic file (type png)
-<use Imagenes/CircuitoRealimentado.png>
-Package pdftex.def Info: Imagenes/CircuitoRealimentado.png  used on input line 
-229.
-(pdftex.def)             Requested size: 469.47049pt x 177.93788pt.
-<../graficos/escalon1.jpg, id=96, 562.1pt x 421.575pt>
-File: ../graficos/escalon1.jpg Graphic file (type jpg)
-<use ../graficos/escalon1.jpg>
-Package pdftex.def Info: ../graficos/escalon1.jpg  used on input line 242.
-(pdftex.def)             Requested size: 375.57782pt x 281.68185pt.
- [4 <./Imagenes/CircuitoRealimentado.png> <../graficos/escalon1.jpg>]
-<../graficos-xy/xy.png, id=103, 421.575pt x 316.18124pt>
-File: ../graficos-xy/xy.png Graphic file (type png)
-<use ../graficos-xy/xy.png>
-Package pdftex.def Info: ../graficos-xy/xy.png  used on input line 254.
-(pdftex.def)             Requested size: 375.57782pt x 281.68988pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 261.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 261.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 261.
-
-<../graficos/escalonSinK2.jpg, id=104, 562.1pt x 421.575pt>
-File: ../graficos/escalonSinK2.jpg Graphic file (type jpg)
-<use ../graficos/escalonSinK2.jpg>
-Package pdftex.def Info: ../graficos/escalonSinK2.jpg  used on input line 277.
-(pdftex.def)             Requested size: 375.57782pt x 281.68185pt.
-[5 <../graficos-xy/xy.png (PNG copy)>]
-<../graficos-xy/xy-sin-k.png, id=110, 421.575pt x 316.18124pt>
-File: ../graficos-xy/xy-sin-k.png Graphic file (type png)
-<use ../graficos-xy/xy-sin-k.png>
-Package pdftex.def Info: ../graficos-xy/xy-sin-k.png  used on input line 294.
-(pdftex.def)             Requested size: 375.57782pt x 281.68988pt.
- [6 <../graficos/escalonSinK2.jpg>]
-[7 <../graficos-xy/xy-sin-k.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 301.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 301.
- (Control_tp2_main.aux
+l.27 \newpage
+              [1]
+<../Images/ModeloMotor.png, id=27, 2560.16475pt x 1073.81175pt>
+File: ../Images/ModeloMotor.png Graphic file (type png)
+<use ../Images/ModeloMotor.png>
+Package pdftex.def Info: ../Images/ModeloMotor.png  used on input line 35.
+(pdftex.def)             Requested size: 234.73524pt x 98.44124pt.
+ [2 <../Images/ModeloMotor.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
+ (Control_tp3_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 301.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 301.
-Package rerunfilecheck Info: File `Control_tp2_main.out' has not changed.
-(rerunfilecheck)             Checksum: A4A962896E53A113D1E0B1BF7F2D0D1C;847.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
+Package rerunfilecheck Info: File `Control_tp3_main.out' has not changed.
+(rerunfilecheck)             Checksum: 55054E07DC03AAACCC9DCFE13F0A406C;63.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 21050 strings out of 492947
- 387196 string characters out of 3125617
- 500747 words of memory out of 3000000
- 24494 multiletter control sequences out of 15000+200000
- 26924 words of font info for 99 fonts, out of 3000000 for 9000
+ 21098 strings out of 492947
+ 387237 string characters out of 3125617
+ 496467 words of memory out of 3000000
+ 24569 multiletter control sequences out of 15000+200000
+ 25064 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,71p,817b,427s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,11n,71p,817b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX
@@ -1101,18 +983,17 @@ ts/cm/cmbx10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 /Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marcel
 o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marcelo/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marcelo/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/
-Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmti12.pfb>
-Output written on Control_tp2_main.pdf (8 pages, 335434 bytes).
+cm/cmmi5.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marcelo/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marcelo/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
+/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmti12.pfb>
+Output written on Control_tp3_main.pdf (3 pages, 300495 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 79 PDF objects out of 1000 (max. 8388607)
+ 5 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
