@@ -1,1 +1,12 @@
 \BOOKMARK [1][-]{section.1}{An\341lisis del Motor de CC}{}% 1
+\BOOKMARK [1][-]{section.2}{Driver para se\361ales}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Motor - Puente H}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Potenci\363metro \(Posici\363n\)}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Tac\363metro \(Velocidad\)}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Se\361al de control por Potenci\363metro}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Simulaci\363n y Mediciones}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Entrada por se\361al}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Rectangular}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Triangular}{subsection.3.1}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Senoidal}{subsection.3.1}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Entrada por potenci\363metro}{section.3}% 12
