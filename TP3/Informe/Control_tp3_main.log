@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  9 NOV 2019 01:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  9 NOV 2019 13:37
 entering extended mode
 **./Control_tp3_main.tex
 (Control_tp3_main.tex
@@ -947,69 +947,107 @@ been already used, duplicate ignored
                    \relax 
 l.27 \newpage
               [1]
-<../Images/ModeloMotor.png, id=82, 2560.16475pt x 1073.81175pt>
+<../Images/ModeloMotor.png, id=92, 2560.16475pt x 1073.81175pt>
 File: ../Images/ModeloMotor.png Graphic file (type png)
 <use ../Images/ModeloMotor.png>
 Package pdftex.def Info: ../Images/ModeloMotor.png  used on input line 35.
 (pdftex.def)             Requested size: 234.73524pt x 98.44124pt.
-<../Images/DiagramaSimple.png, id=84, 1275.76625pt x 270.00874pt>
+<../Images/DiagramaSimple.png, id=94, 1275.76625pt x 270.00874pt>
 File: ../Images/DiagramaSimple.png Graphic file (type png)
 <use ../Images/DiagramaSimple.png>
-Package pdftex.def Info: ../Images/DiagramaSimple.png  used on input line 64.
+Package pdftex.def Info: ../Images/DiagramaSimple.png  used on input line 65.
 (pdftex.def)             Requested size: 469.47049pt x 99.35782pt.
  [2 <../Images/ModeloMotor.png> <../Images/DiagramaSimple.png>]
-<../Images/Regulador.png, id=96, 690.1785pt x 409.53pt>
+<../Images/DiagramaFeed.png, id=107, 1403.2425pt x 531.9875pt>
+File: ../Images/DiagramaFeed.png Graphic file (type png)
+<use ../Images/DiagramaFeed.png>
+Package pdftex.def Info: ../Images/DiagramaFeed.png  used on input line 92.
+(pdftex.def)             Requested size: 469.47049pt x 177.98354pt.
+<../Images/DiagramaFeedConKP.png, id=108, 1463.4675pt x 518.93875pt>
+File: ../Images/DiagramaFeedConKP.png Graphic file (type png)
+<use ../Images/DiagramaFeedConKP.png>
+Package pdftex.def Info: ../Images/DiagramaFeedConKP.png  used on input line 99
+.
+(pdftex.def)             Requested size: 469.47049pt x 166.46762pt.
+ [3 <../Images/DiagramaFeed.png> <../Images/DiagramaFeedConKP.png>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 112.
+
+
+("C:\Users\Marcelo\AppData\Local\Programs\MiKTeX 2.9\tex/latex\base\omlcmr.fd"
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 112.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
+
+("C:\Users\Marcelo\AppData\Local\Programs\MiKTeX 2.9\tex/latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+[4] [5]
+<../Images/Regulador.png, id=227, 690.1785pt x 409.53pt>
 File: ../Images/Regulador.png Graphic file (type png)
 <use ../Images/Regulador.png>
-Package pdftex.def Info: ../Images/Regulador.png  used on input line 117.
-(pdftex.def)             Requested size: 281.68515pt x 167.14601pt.
-<../Images/PoteMotor.png, id=97, 292.6935pt x 355.3275pt>
+Package pdftex.def Info: ../Images/Regulador.png  used on input line 223.
+(pdftex.def)             Requested size: 187.78532pt x 111.42442pt.
+<../Images/PoteMotor.png, id=228, 292.6935pt x 355.3275pt>
 File: ../Images/PoteMotor.png Graphic file (type png)
 <use ../Images/PoteMotor.png>
-Package pdftex.def Info: ../Images/PoteMotor.png  used on input line 126.
-(pdftex.def)             Requested size: 93.89265pt x 113.98363pt.
-<../Images/ModeloFuncion.png, id=98, 486.01575pt x 457.71pt>
+Package pdftex.def Info: ../Images/PoteMotor.png  used on input line 234.
+(pdftex.def)             Requested size: 70.4177pt x 85.48636pt.
+<../Images/ModeloFuncion.png, id=229, 486.01575pt x 457.71pt>
 File: ../Images/ModeloFuncion.png Graphic file (type png)
 <use ../Images/ModeloFuncion.png>
-Package pdftex.def Info: ../Images/ModeloFuncion.png  used on input line 134.
-(pdftex.def)             Requested size: 211.26028pt x 198.95558pt.
- [3 <../Images/Regulador.png> <../Images/PoteMotor.png> <../Images/ModeloFuncio
+Package pdftex.def Info: ../Images/ModeloFuncion.png  used on input line 242.
+(pdftex.def)             Requested size: 187.78532pt x 176.85095pt.
+ [6 <../Images/Regulador.png> <../Images/PoteMotor.png> <../Images/ModeloFuncio
 n.png>]
-<../Images/FuncionOpamp.png, id=103, 814.84425pt x 457.10776pt>
+<../Images/FuncionOpamp.png, id=235, 814.84425pt x 457.10776pt>
 File: ../Images/FuncionOpamp.png Graphic file (type png)
 <use ../Images/FuncionOpamp.png>
-Package pdftex.def Info: ../Images/FuncionOpamp.png  used on input line 153.
+Package pdftex.def Info: ../Images/FuncionOpamp.png  used on input line 261.
 (pdftex.def)             Requested size: 281.68515pt x 158.02318pt.
-<../Images/PoteManual.png, id=104, 160.1985pt x 383.031pt>
+<../Images/PoteManual.png, id=236, 160.1985pt x 383.031pt>
 File: ../Images/PoteManual.png Graphic file (type png)
 <use ../Images/PoteManual.png>
-Package pdftex.def Info: ../Images/PoteManual.png  used on input line 162.
+Package pdftex.def Info: ../Images/PoteManual.png  used on input line 270.
 (pdftex.def)             Requested size: 46.9499pt x 112.25674pt.
- [4 <../Images/FuncionOpamp.png> <../Images/PoteManual.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
-
-(Control_tp3_main.aux
+<../Images/Top.png, id=237, 655.248pt x 498.06075pt>
+File: ../Images/Top.png Graphic file (type png)
+<use ../Images/Top.png>
+Package pdftex.def Info: ../Images/Top.png  used on input line 278.
+(pdftex.def)             Requested size: 187.78532pt x 142.73915pt.
+<../Images/Bottom.png, id=238, 652.839pt x 498.06075pt>
+File: ../Images/Bottom.png Graphic file (type png)
+<use ../Images/Bottom.png>
+Package pdftex.def Info: ../Images/Bottom.png  used on input line 280.
+(pdftex.def)             Requested size: 187.78532pt x 143.26355pt.
+ [7 <../Images/FuncionOpamp.png> <../Images/PoteManual.png> <../Images/Top.png>
+ <../Images/Bottom.png>] [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 299.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 299.
+ (Control_tp3_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 299.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 299.
 Package rerunfilecheck Info: File `Control_tp3_main.out' has not changed.
-(rerunfilecheck)             Checksum: A558C2E40ADE8B5E7102D6856E7BFF94;857.
+(rerunfilecheck)             Checksum: 71F10A99064DC4A4C7BDE3599F76C99D;993.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21154 strings out of 492947
- 388414 string characters out of 3125617
- 500466 words of memory out of 3000000
- 24606 multiletter control sequences out of 15000+200000
+ 21583 strings out of 492947
+ 393231 string characters out of 3125617
+ 624467 words of memory out of 3000000
+ 24919 multiletter control sequences out of 15000+200000
  25064 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,71p,817b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,12n,71p,817b,1839s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX
@@ -1019,16 +1057,21 @@ o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmmi5.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmmi7.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marcelo/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marcelo/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/M
-arcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmti12.pfb>
-Output written on Control_tp3_main.pdf (5 pages, 427173 bytes).
+fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marcelo/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marcelo/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/
+Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.p
+fb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr8.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marcelo/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Marcelo/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Use
+rs/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
+i12.pfb>
+Output written on Control_tp3_main.pdf (9 pages, 662751 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 124 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

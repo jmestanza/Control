@@ -42,80 +42,188 @@ Las ecuaciones que caracterizan al sistema son:
 \begin{array}{ll}
 E_a = R_a \cdot i_a + L_a \cdot \dot{i_a} + V_b \\
 V_b = K_b \cdot \omega_m = K_b \cdot \dot{\theta_m} \\
-T_m = J_m \cdot \ddot{\theta_m} + B_m \cdot \dot{\theta_m}
+T_m = J_m \cdot \ddot{\theta_m} + B_m \cdot \dot{\theta_m} \\
+T_m = K_t \cdot i_a
 \end{array}
 \right.
 \]
 
-De las cuales se puede obtener las funciones de transferencia de $\theta_m$ y $\omega_m$ respecto a la tensión de alimentación $E_a$. Considerando que para continua (o muy baja frecuencia) no afecta la inductancia $L_a$, se obtiene:
+De las cuales se puede obtener las funciones de transferencia de $\theta_m$ y $\omega_m$ respecto a la tensión de alimentación $E_a$. Considerando que $B_m = 0$, resulta:
 
 \[
-\frac{\omega_m}{E_a} = \frac{\frac{K_t}{R_a \cdot J_m}}{S + \frac{B_m}{J_m} + \frac{K_t \cdot K_b}{R_a \cdot J_m}}
+\frac{\omega_m}{E_a} = \frac{\frac{K_t}{L_a \cdot J_m}}{S^2 + S\cdot \frac{R_a}{L_a} + \frac{K_t \cdot K_b}{L_a \cdot J_m}}
 \]
 
 \[
-\frac{\theta_m}{E_a} = \frac{\frac{K_t}{R_a \cdot J_m}}{S \cdot (S + \frac{B_m}{J_m} + \frac{K_t \cdot K_b}{R_a \cdot J_m})}
+\frac{\theta_m}{E_a} = \frac{\frac{K_t}{L_a \cdot J_m}}{S\cdot \left(S^2 + S \cdot \frac{R_a}{L_a} + \frac{K_t \cdot K_b}{L_a \cdot J_m}\right)}
 \]
 
-De donde se puede construir el diagrama en bloques:
+De donde se puede construir el diagrama en bloques (en general): 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{../Images/DiagramaSimple.png}
 \end{figure}
 
-
-LO QUE VA ABAJO AL FINAL NO LO PONGO, SE USO EL METODO QUE DICE LA FILMINA DE CALCULO EMPIRICO ANULANDO UNA Y AJUSTANDO HASTA OSCILACION, Y DESPUES AJUSTAR LA OTRA. EDITAR EL CODIGO PARA QUE NO PAREZCA IGUAL
-Se toman como variables de estado a $\theta_m$ y a $\omega_m$, armando las ecuaciones de estado:
+Donde el valor de las constantes provistas por la hoja de datos son:
 
 \[
-\left\lbrace
-\begin{array}{ll}
-\dot{\theta_m} = \omega_m \\
-\dot{\omega_m} = E_a \cdot \frac{K_t}{R_a \cdot J_m} - \omega_m \cdot ( \frac{B_m}{J_m} + \frac{K_t \cdot K_b}{R_a \cdot J_m} )
-\end{array}
-\right.
+R_a = 2.6 [\Omega] \hspace{1cm} J_m = 3.87 \cdot 10^{-7} [Kg \cdot m^2] \hspace{1cm} E_a = 6 [V] \textrm{ (Máximo)} \hspace{1cm} L_a = 180 [\mu Hy] \hspace{1cm}
 \]
-
-Por lo que el espacio de estados matricial resulta:
 
 \[
-\begin{bmatrix}
-\dot{\theta_m} \\
-\dot{\omega_m} 
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 1 \\
-0 & \left( \frac{B_m}{J_m} + \frac{K_t \cdot K_b}{R_a \cdot J_m} \right) 
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-\theta_m \\
-\omega_m 
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 \\
-\frac{K_t}{R_a \cdot J_m}
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-E_a
-\end{bmatrix}
+K_t = 0.00767[Nm] \hspace{1cm} K_b = 0.00767 \left[\frac{V}{rad \cdot seg}\right] 
 \]
+
+\[
+K_{Pot} = 35.2 \left[ \frac{\circ}{V} \right] \textrm{ (Sobre el potenciómtetro sin las resistencias de }7.15K\Omega)
+\]
+
+\[
+K_{Tach} = 1.5 \left[  \frac{V}{1000RPM} \right]
+\]
+
+\newpage
+
+Al sistema bajo análisis se le aplica realimentación lineal de estados para controlar la posición del motor, tomando como variables de estado a $\omega_m$ y a $\theta_m$. Luego de aplicarla, el diagrama en bloques queda de la forma:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{../Images/DiagramaFeed.png}
+\end{figure}
+
+Para anular el error permanente se agrega delante un bloque de ganancia $K_{Prev}$:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{../Images/DiagramaFeedConKP.png}
+\end{figure}
+
+Para hallar las constantes de realimentación lineal se aplica el método de Ziegler-Nichols en el controlador a implementar (Ver en ), para luego comparar las mediciones que resultan con dichas constantes con la simulación.
+EDITAR EL CODIGO
+
+\newpage
+
+\section{Controlador Arduino - Código Fuente}
+Para realizar la realimentación lineal de estados, se implementó mediante un software en Arduino, cuyo código fuente se cita a continuación.
+
+\begin{lstlisting}
+
+#include <L298N.h>
+// Libreria para el manejo de la Placa Stepper
+
+#define ADC_MID_RANGE 512 // El rango total es 1024, lo que hace es considerar el offset de la se\~nal a 2.5V
+#define PIN_ENABLE 10 // 
+#define PIN_IN1 9
+#define PIN_IN2 8
+
+#define K_PREV 2.5
+
+#define LIM_SUP 740
+#define LIM_INF 490
+
+#define K_TACH 1.5
+
+// Constantes para realimentacion lineal de estados
+#define K_FI 1
+#define K_W 1
+
+L298N * canalA=NULL;
+
+class polePlacement {       
+  private:             
+    float kVel;
+    float kFi;
+    int pinW;
+    int pinFi;
+    int pinSetPoint;        
+    L298N * motor;
+ 
+    configMotorSpeed(int mapedDuty);
+   
+   public:
+   // Inicializador
+   polePlacement(int pinEnable, int pinIn1, int pinIn2,int pinW,int pinFi,int pinSetPoint,float kVel,float kFi);
+ 
+   runOnce();
+       
+};
+
+polePlacement * MotorDrv;
+
+void setup() {
+  
+  MotorDrv = new polePlacement(PIN_ENABLE,PIN_IN1,PIN_IN2,A0,A1,A2,-4,2.1);
+
+}
+
+void loop() {
+ 
+  MotorDrv->runOnce();
+  delay(1); // Muestreo cada 1ms
+
+}
+
+polePlacement::polePlacement(int pinEnable, int pinIn1, int pinIn2,int pinW,int pinFi,int pinSetPoint,float kVel,float kFi){
+  this->kVel = kVel;
+  this->kFi = kFi;
+  this->pinFi = pinFi;
+  this->pinW = pinW;
+  this->pinSetPoint = pinSetPoint;
+  motor = new L298N(pinEnable,pinIn1,pinIn2);
+}
+
+polePlacement::runOnce(){
+
+  int medVel, medPos, medSetPoint, e;
+
+  medVel = analogRead(pinW) - ADC_MID_RANGE;
+  medPos = analogRead(pinFi);
+  medSetPoint = analogRead(pinSetPoint);
+
+  medSetPoint = K_PREV*(medSetPoint-ADC_MID_RANGE);
+
+  medPos = map(medPos, LIM_INF, LIM_SUP, 0, 1023) - ADC_MID_RANGE;
+  
+  e = medSetPoint-(medPos*kFi)-(medVel*kVel);
+
+  configMotorSpeed(map(e, -512*K_TACH, 512*K_TACH, -255, 255));
+  
+}
+
+polePlacement::configMotorSpeed(int mapedDuty){
+  
+  if(mapedDuty > 255){
+    mapedDuty = 255;
+  }else if(mapedDuty < -255){
+    mapedDuty = -255;
+  }
+
+  if(mapedDuty < 0){
+    motor->setSpeed(-mapedDuty);
+    motor->forward();   
+  }else{
+    motor->setSpeed(mapedDuty);
+    motor->backward();    
+  }
+}
+
+\end{lstlisting}
+
+\newpage
 
 \section{Driver para señales}
-
-Para realizar la realimentación lineal de estados, se implementó mediante un software en Arduino. Por ello se debieron adaptar las señales de los sensores, para lo cual se realizó una placa adicional como driver.
+Dado que la implementación del controlador se realizó en Arduino, se debieron adaptar las señales de los sensores acorde a los niveles de tensión que admite el Arduino, para lo cual se realizó una placa adicional como driver.
 
 \subsection{Motor - Puente H}
 El motor acepta como máxima tensión de alimentación 6V, por lo que alimentando a la placa con $\pm 10$V, se toman los +10V y se pasan por un regulador LM7806, y de ahí se toma la alimentación para el puente H (para el control del motor):
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\linewidth]{../Images/Regulador.png}
+\includegraphics[width=0.4\linewidth]{../Images/Regulador.png}
 \end{figure}
+
+Se utilizó la Placa Stepper para Arduino (AR-L298SHIELD), para lo cual se utilizó la librería L298.h mencionada en el código fuente.
 
 \subsection{Potenciómetro (Posición)}
 
@@ -123,7 +231,7 @@ Para el potenciómetro que permite medir la posición angular del motor, se lo a
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.2\linewidth]{../Images/PoteMotor.png}
+\includegraphics[width=0.15\linewidth]{../Images/PoteMotor.png}
 \end{figure}
 
 \subsection{Tacómetro (Velocidad)}
@@ -131,7 +239,7 @@ Para adaptar la señal del tacómetro, dado que provee valores entre -5V y +5V, 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\linewidth]{../Images/ModeloFuncion.png}
+\includegraphics[width=0.4\linewidth]{../Images/ModeloFuncion.png}
 \end{figure}
 
 Considerando la transferencia de un amplificador inversor:
@@ -161,6 +269,17 @@ Para el potenciómetro de señal de control manual, utilizando la misma alimenta
 \centering
 \includegraphics[width=0.1\linewidth]{../Images/PoteManual.png}
 \end{figure}
+
+\subsection{Driver PCB}
+Se muestra a continuacón el layout del diseño final de la placa.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{../Images/Top.png}
+\centering
+\includegraphics[width=0.4\linewidth]{../Images/Bottom.png}
+\end{figure}
+
 
 \section{Simulación y Mediciones}
 
