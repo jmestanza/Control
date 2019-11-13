@@ -100,12 +100,17 @@ Para anular el error permanente se agrega delante un bloque de ganancia $K_{Prev
 \end{figure}
 
 Para hallar las constantes de realimentación lineal se aplica el método de Ziegler-Nichols en el controlador a implementar (Ver en ), para luego comparar las mediciones que resultan con dichas constantes con la simulación.
-EDITAR EL CODIGO
 
 \newpage
 
 \section{Controlador Arduino - Código Fuente}
-Para realizar la realimentación lineal de estados, se implementó mediante un software en Arduino, cuyo código fuente se cita a continuación.
+Para realizar la realimentación lineal de estados, se implementó mediante un software en Arduino, cuyo código fuente se cita a continuación.\par
+El mapeo del potenciómetro para los extremos de $0^{\circ}$ a $180^{\circ}$ en el ADC resulta entre aproximadamente 490 y 740. Pasando estos valores a tensión, considerando que el ADC es de 10 bits resulta:
+
+\[
+\frac{490 \cdot 5V}{1023} = 2.4V \hspace{2cm} \frac{740 \cdot 5V}{1023} = 3.6V
+\]
+Dichos valores equivalentes se utilizarán luego para verificar los extremos de las mediciones frente a entradas de diferentes señales.
 
 \begin{lstlisting}
 
@@ -275,25 +280,82 @@ Se muestra a continuacón el layout del diseño final de la placa.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\linewidth]{../Images/Top.png}
+\includegraphics[width=0.35\linewidth]{../Images/Top.png}
 \centering
-\includegraphics[width=0.4\linewidth]{../Images/Bottom.png}
+\includegraphics[width=0.35\linewidth]{../Images/Bottom.png}
+\caption{Diseño de Driver - Lado Top y Bottom}
 \end{figure}
 
 
 \section{Simulación y Mediciones}
 
+Se realizaron ensayos para diferentes tipos de entrada al sistema, considerando señales cuadrada, triangular y senoidal, además de control manual mediante potenciómetro.
 
+\subsection{Entrada por potenciómetro}
+
+En este caso se utilizó el control dado por el potenciómetro configurado según la sección 3.4. El rango de control que permite es de $0^{\circ}$ a $180^{\circ}$. Con esta señal de prueba y con la cuadrada se pudo calibrar la constante de corrección de error permanente $K_{Prev}$ en el software.
 
 \subsection{Entrada por señal}
 
 \subsubsection{Rectangular}
+Se ingresa al controlador de Arduino con una señal cuadrada de entre 0V y 5V (y con el software para controlar el puente H se mapea a una señal de entre 0V y 6V). Ajustando las constantes de realimentación lineal de estados en forma experimental tomando de guía el método de Ziegler-Nichols, se logró llegar a un régimen lo más cercano posible al crítico. Se muestran los resultados comparados de la simulación y la medición.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{../Images/EscalonSimulado.png}
+\caption{Respuesta al escalón simulada}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{../Mediciones/servo_cuadrada.jpeg}
+\includegraphics[width=0.45\linewidth]{../Images/EscalonMedido.png}
+\caption{Respuesta al escalón medida - Detalle de la medición (mediante exportación de CSV)}
+\end{figure}
+
+Para comparar correctamente ambos casos, se debe tener en cuenta que la simulación se ingresa con escalón de 6V que es el máximo admitido. En la medición se ingresa con la señal de entrada de máximo 5V para realizar el control a través del Arduino. Se tiene en este caso que el máximo se da a 3.76V (contra los 3.6V teóricos calculados previamente) y mínimo a 2.64V (contra los 2.4V teóricos). En el caso simulado el tiempo de establecimiento resulta de aproximadamente 125ms, mientras que en el medido es de 100ms aproximadamente. Se trabajó con una frecuencia de 0.2Hz.
+
+\newpage
 
 \subsubsection{Triangular}
 
+Se ingresa ahora al controlador de Arduino con una señal triangular de entre 0V y 5V.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{../Images/RampaSimulado.png}
+\caption{Respuesta a la rampa simulada}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{../Mediciones/servo_triangular.jpeg}
+\includegraphics[width=0.45\linewidth]{../Images/RampaMedido.png}
+\caption{Respuesta a la rampa medida - Detalle de la medición (mediante exportación de CSV)}
+\end{figure}
+
+Se puede observar en ambos casos (simulado y medido) que el sistema demora un tiempo entre la entrada de señal rampa y el posicionamiento efectivo. Al no tener control integral, solamente se ajusta el error permanente frente al escalón, mientras que frente a la rampa se tiene un error permanente constante no nulo (que se puede visulizar también como el retardo que posee el sistema una vez aplicada la señal, hasta que se alcanza la posición deseada). Fuera de esto, el sistema sigue a la señal sin inconvenientes. Se trabaja igual que para el escalón en frecuencias menores a 1Hz. \par
+Los máximos y mínimos de tensión de mapeo son los mismos a nivel comparación respecto al caso anterior (2.4V y 3.6V).
+
+\newpage
+
 \subsubsection{Senoidal}
 
+Se ingresa finalmente al controlador Arduino con una señal senoidal de entre 0V y 5V.
 
-\subsection{Entrada por potenciómetro}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{../Images/SenoSimulado.png}
+\caption{Respuesta a la senoidal simulada}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{../Mediciones/servo_seno.jpeg}
+\includegraphics[width=0.45\linewidth]{../Images/SenoMedido.png}
+\caption{Respuesta a la senoidal medida - Detalle de la medición (mediante exportación de CSV)}
+\end{figure}
+
+Al igual que para la triangular, se observa que el sistema sigue a la señal con un error permanente aproximadamente constante (debido a la baja frecuencia utilizada), pero formalmente no es exactamente así. En el caso simulado puede apreciarse más como resulta realmente: en el primer cuarto de período, la senoidal crece de manera no lineal en forma exponencial, por lo cual el sistema trata de seguirla pero se alejan (y continuaría alejándose de la parábola si ésta siguiera creciendo), resultando un error permanente infinito desde el punto de vista teórico. Como luego la senoidal sigue su forma y el el cuarto de ciclo siguiente la onda deja de crecer en forma exponencial negativa, le permite al sistema reacoplarse a la misma, compensando el error producido al principio. Luego, en el siguiente cuarto de ciclo, la senoidal comienza a disminuir en forma exponencial creciente, produciéndose el mismo fenómeno que en el primer cuarto de ciclo (el sistema dejaría de seguirla). Finalmente, en el último cuarto de ciclo, la senoidal decrece pero disminuyendo la pendiente (como en el segundo cuarto de ciclo), permitiendo al sistema reacoplarse frente a la separación producida en el cuarto de ciclo anterior. Como la señal es periódica en el tiempo, esto se repite indefinidamente.
 
 \end{document}

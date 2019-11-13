@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  9 NOV 2019 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2019.9.19)  13 NOV 2019 02:59
 entering extended mode
 **./Control_tp3_main.tex
 (Control_tp3_main.tex
@@ -970,84 +970,139 @@ Package pdftex.def Info: ../Images/DiagramaFeedConKP.png  used on input line 99
 .
 (pdftex.def)             Requested size: 469.47049pt x 166.46762pt.
  [3 <../Images/DiagramaFeed.png> <../Images/DiagramaFeedConKP.png>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 112.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 117.
 
 
 ("C:\Users\Marcelo\AppData\Local\Programs\MiKTeX 2.9\tex/latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 112.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 117.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 120.
 
 ("C:\Users\Marcelo\AppData\Local\Programs\MiKTeX 2.9\tex/latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 120.
 [4] [5]
 <../Images/Regulador.png, id=227, 690.1785pt x 409.53pt>
 File: ../Images/Regulador.png Graphic file (type png)
 <use ../Images/Regulador.png>
-Package pdftex.def Info: ../Images/Regulador.png  used on input line 223.
+Package pdftex.def Info: ../Images/Regulador.png  used on input line 228.
 (pdftex.def)             Requested size: 187.78532pt x 111.42442pt.
 <../Images/PoteMotor.png, id=228, 292.6935pt x 355.3275pt>
 File: ../Images/PoteMotor.png Graphic file (type png)
 <use ../Images/PoteMotor.png>
-Package pdftex.def Info: ../Images/PoteMotor.png  used on input line 234.
+Package pdftex.def Info: ../Images/PoteMotor.png  used on input line 239.
 (pdftex.def)             Requested size: 70.4177pt x 85.48636pt.
 <../Images/ModeloFuncion.png, id=229, 486.01575pt x 457.71pt>
 File: ../Images/ModeloFuncion.png Graphic file (type png)
 <use ../Images/ModeloFuncion.png>
-Package pdftex.def Info: ../Images/ModeloFuncion.png  used on input line 242.
+Package pdftex.def Info: ../Images/ModeloFuncion.png  used on input line 247.
 (pdftex.def)             Requested size: 187.78532pt x 176.85095pt.
  [6 <../Images/Regulador.png> <../Images/PoteMotor.png> <../Images/ModeloFuncio
 n.png>]
 <../Images/FuncionOpamp.png, id=235, 814.84425pt x 457.10776pt>
 File: ../Images/FuncionOpamp.png Graphic file (type png)
 <use ../Images/FuncionOpamp.png>
-Package pdftex.def Info: ../Images/FuncionOpamp.png  used on input line 261.
+Package pdftex.def Info: ../Images/FuncionOpamp.png  used on input line 266.
 (pdftex.def)             Requested size: 281.68515pt x 158.02318pt.
 <../Images/PoteManual.png, id=236, 160.1985pt x 383.031pt>
 File: ../Images/PoteManual.png Graphic file (type png)
 <use ../Images/PoteManual.png>
-Package pdftex.def Info: ../Images/PoteManual.png  used on input line 270.
+Package pdftex.def Info: ../Images/PoteManual.png  used on input line 275.
 (pdftex.def)             Requested size: 46.9499pt x 112.25674pt.
 <../Images/Top.png, id=237, 655.248pt x 498.06075pt>
 File: ../Images/Top.png Graphic file (type png)
 <use ../Images/Top.png>
-Package pdftex.def Info: ../Images/Top.png  used on input line 278.
-(pdftex.def)             Requested size: 187.78532pt x 142.73915pt.
+Package pdftex.def Info: ../Images/Top.png  used on input line 283.
+(pdftex.def)             Requested size: 164.31754pt x 124.89487pt.
 <../Images/Bottom.png, id=238, 652.839pt x 498.06075pt>
 File: ../Images/Bottom.png Graphic file (type png)
 <use ../Images/Bottom.png>
-Package pdftex.def Info: ../Images/Bottom.png  used on input line 280.
-(pdftex.def)             Requested size: 187.78532pt x 143.26355pt.
+Package pdftex.def Info: ../Images/Bottom.png  used on input line 285.
+(pdftex.def)             Requested size: 164.31754pt x 125.35844pt.
  [7 <../Images/FuncionOpamp.png> <../Images/PoteManual.png> <../Images/Top.png>
- <../Images/Bottom.png>] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 299.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 299.
+ <../Images/Bottom.png>]
+<../Images/EscalonSimulado.png, id=244, 930.47626pt x 543.83176pt>
+File: ../Images/EscalonSimulado.png Graphic file (type png)
+<use ../Images/EscalonSimulado.png>
+Package pdftex.def Info: ../Images/EscalonSimulado.png  used on input line 305.
+
+(pdftex.def)             Requested size: 281.68515pt x 164.63615pt.
+<../Mediciones/servo_cuadrada.jpeg, id=245, 770.12718pt x 533.74406pt>
+File: ../Mediciones/servo_cuadrada.jpeg Graphic file (type jpg)
+<use ../Mediciones/servo_cuadrada.jpeg>
+Package pdftex.def Info: ../Mediciones/servo_cuadrada.jpeg  used on input line 
+311.
+(pdftex.def)             Requested size: 211.26028pt x 146.4095pt.
+<../Images/EscalonMedido.png, id=246, 634.16925pt x 382.42876pt>
+File: ../Images/EscalonMedido.png Graphic file (type png)
+<use ../Images/EscalonMedido.png>
+Package pdftex.def Info: ../Images/EscalonMedido.png  used on input line 312.
+(pdftex.def)             Requested size: 211.26028pt x 127.39812pt.
+ [8 <../Images/EscalonSimulado.png> <../Mediciones/servo_cuadrada.jpeg> <../Ima
+ges/EscalonMedido.png>]
+<../Images/RampaSimulado.png, id=253, 928.06725pt x 543.2295pt>
+File: ../Images/RampaSimulado.png Graphic file (type png)
+<use ../Images/RampaSimulado.png>
+Package pdftex.def Info: ../Images/RampaSimulado.png  used on input line 326.
+(pdftex.def)             Requested size: 328.6279pt x 192.35461pt.
+<../Mediciones/servo_triangular.jpeg, id=254, 770.12718pt x 502.87875pt>
+File: ../Mediciones/servo_triangular.jpeg Graphic file (type jpg)
+<use ../Mediciones/servo_triangular.jpeg>
+Package pdftex.def Info: ../Mediciones/servo_triangular.jpeg  used on input lin
+e 332.
+(pdftex.def)             Requested size: 211.26028pt x 137.94295pt.
+<../Images/RampaMedido.png, id=255, 637.1805pt x 387.24675pt>
+File: ../Images/RampaMedido.png Graphic file (type png)
+<use ../Images/RampaMedido.png>
+Package pdftex.def Info: ../Images/RampaMedido.png  used on input line 333.
+(pdftex.def)             Requested size: 211.26028pt x 128.39452pt.
+ [9 <../Images/RampaSimulado.png> <../Mediciones/servo_triangular.jpeg> <../Ima
+ges/RampaMedido.png>]
+<../Images/SenoSimulado.png, id=262, 925.65825pt x 544.434pt>
+File: ../Images/SenoSimulado.png Graphic file (type png)
+<use ../Images/SenoSimulado.png>
+Package pdftex.def Info: ../Images/SenoSimulado.png  used on input line 348.
+(pdftex.def)             Requested size: 328.6279pt x 193.28787pt.
+<../Mediciones/servo_seno.jpeg, id=263, 770.88pt x 533.74406pt>
+File: ../Mediciones/servo_seno.jpeg Graphic file (type jpg)
+<use ../Mediciones/servo_seno.jpeg>
+Package pdftex.def Info: ../Mediciones/servo_seno.jpeg  used on input line 354.
+
+(pdftex.def)             Requested size: 211.26028pt x 146.27104pt.
+<../Images/SenoMedido.png, id=264, 635.976pt x 385.44pt>
+File: ../Images/SenoMedido.png Graphic file (type png)
+<use ../Images/SenoMedido.png>
+Package pdftex.def Info: ../Images/SenoMedido.png  used on input line 355.
+(pdftex.def)             Requested size: 211.26028pt x 128.03662pt.
+ [10 <../Images/SenoSimulado.png> <../Mediciones/servo_seno.jpeg> <../Images/Se
+noMedido.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 361.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 361.
  (Control_tp3_main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 299.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 299.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 361.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 361.
 Package rerunfilecheck Info: File `Control_tp3_main.out' has not changed.
-(rerunfilecheck)             Checksum: 71F10A99064DC4A4C7BDE3599F76C99D;993.
+(rerunfilecheck)             Checksum: 309A68CE4ED578D5D2A93A9B2D12940E;993.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21583 strings out of 492947
- 393231 string characters out of 3125617
- 624467 words of memory out of 3000000
- 24919 multiletter control sequences out of 15000+200000
+ 21641 strings out of 492947
+ 394686 string characters out of 3125617
+ 606466 words of memory out of 3000000
+ 24957 multiletter control sequences out of 15000+200000
  25064 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,71p,817b,1839s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,12n,71p,1338b,1839s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marcelo/AppData/Local/Programs/MiKTeX
@@ -1069,9 +1124,9 @@ grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Marcelo/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Use
 rs/Marcelo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb>
-Output written on Control_tp3_main.pdf (9 pages, 662751 bytes).
+Output written on Control_tp3_main.pdf (11 pages, 1288102 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 354 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
