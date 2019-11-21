@@ -45,15 +45,68 @@ Como se puede observar en la figura \ref{fig:PID} en los controladores PID se di
   \item $K_d$: constante que acompaña a la derivada del error
   
 \end{itemize}
+
+
 \newpage
-\section{Práctica}
-Se ajustaron las constantes mediante el siguiente método:
+\section{Obtención de datos con carrito}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{images/carrito.JPG}
+\caption{Carrito}
+\label{fig:carrito}
+\end{figure}
+Se dispone del carrito de la Figura \ref{fig:carrito}, el cual posee un fototransistor y un par de leds en frente. Los leds generan radiación infraroja que se ve reflejada en la superficie que se encuentre enfrentada. Esta reflexión le da información al fototransistor sobre a qué distancia está el frente del carrito de la superficie. 
+
+El fototransistor se encuentra encerrado en un housing con una película oscura para reducir la perturbación de la luz visible. El fototransistor se encuentra encerrado en un housing con una película oscura para reducir la perturbación de la luz visible, siendo esta película transparente a la radiación infrarroja.
+
+El carrito posee un motor de corriente continua que le permite desplazarse en una sola dirección pero en ambos sentidos dependiendo de la polaridad de la tensión entregada al motor.
+
+Se utilizó un microcontrolador tipo ARDUINO como ADC para la lectura del fototransistor. Luego de la lectura se pasa el valor a PWM y un pin es necesario para asignar el sentido. Estas dos señales van al puente H.
+
+\section{Modelo del carrito}
+
+
+\section{Control PID y Carrito}
+
+
+
+\newpage
+\section{Método manual de ajuste}
+Se ajustaron las constantes mediante el método manual:
 \begin{itemize}
   \item Primero establecer $K_i=0$ y $K_d=0$. 
   \item Incrementar la $K_p$ hasta que la salida oscile
   \item Establecer $K_p$ a aproximadamente la mitad del valor configurado previamente
   \item Incrementar $K_i$ hasta que el proceso se ajuste en el tiempo requerido (precaución: subir mucho I puede causar inestabilidad)
-  \item Finalmente, incrementar D si se necesita hasta que el lazo sea lo suficientemente rápido para alcanzar su referencia tras una variación brusca de la carga.
+  \item Finalmente, incrementar $K_d$ si se necesita hasta que el lazo sea lo suficientemente rápido para alcanzar su referencia tras una variación brusca de la carga.
+
+ 
+\newpage
+\section{Código}
+\begin{lstlisting}
+
+#include <L298N.h>
+// Libreria para el manejo de la Placa Stepper
+
+#define ADC_MID_RANGE 512 // El rango total es 1024, lo que hace es considerar el offset de la se\~nal a 2.5V
+#define PIN_ENABLE 10 // 
+#define PIN_IN1 9
+#define PIN_IN2 8
+
+#define K_PREV 2.5
+
+#define LIM_SUP 740
+#define LIM_INF 490
+
+#define K_TACH 1.5
+
+// Constantes para realimentacion lineal de estados
+#define K_FI 1
+#define K_W 1
+
+
+\end{lstlisting}
+
  
 \newpage
 \section{Resultados}

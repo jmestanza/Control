@@ -1,4 +1,8 @@
 \babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}PID: Introducci\IeC {\'o}n te\IeC {\'o}rica}{2}{section.1}% 
-\contentsline {section}{\numberline {2}Pr\IeC {\'a}ctica}{3}{section.2}% 
-\contentsline {section}{\numberline {3}Resultados}{4}{section.3}% 
+\contentsline {section}{\numberline {2}Obtenci\IeC {\'o}n de datos con carrito}{3}{section.2}% 
+\contentsline {section}{\numberline {3}Modelo del carrito}{3}{section.3}% 
+\contentsline {section}{\numberline {4}Control PID y Carrito}{3}{section.4}% 
+\contentsline {section}{\numberline {5}M\IeC {\'e}todo manual de ajuste}{4}{section.5}% 
+\contentsline {section}{\numberline {6}C\IeC {\'o}digo}{5}{section.6}% 
+\contentsline {section}{\numberline {7}Resultados}{6}{section.7}% 
