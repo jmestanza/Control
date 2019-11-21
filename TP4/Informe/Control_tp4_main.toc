@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}PID: Introducci\IeC {\'o}n te\IeC {\'o}rica}{2}{section.1}% 
+\contentsline {section}{\numberline {2}Pr\IeC {\'a}ctica}{3}{section.2}% 
+\contentsline {section}{\numberline {3}Resultados}{4}{section.3}% 

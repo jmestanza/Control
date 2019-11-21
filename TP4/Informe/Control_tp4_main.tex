@@ -1,0 +1,65 @@
+ \documentclass{article}
+
+% preambulo:
+\input{Control_tp4_preamble.tex}
+
+\usepackage{fancyhdr}
+
+\geometry{top=2.5cm, bottom=2.0cm, left=2.25cm, right=2.25cm}
+
+\lhead{Sistemas de Control 22.85}
+\chead{TP4 - Control Carrito}
+\rhead{ITBA}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+%\newgeometry{} % margenes default para la caratula
+% caratula:
+\input{Control_tp4_caratula.tex}
+
+
+% indice:
+\tableofcontents
+\newpage
+
+\section{PID: Introducción teórica}
+Los controladores PID (proporcional, integrador y derivativo) proveen un control de lazo empleando feedback que es utilizado en la industria del control.
+Un controlador PID calcula el error e(t) como la diferencia entre el setpoint(deseada) y una variable medida del proceso (la salida de la planta).
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{images/PID.jpg}
+\caption{Controlador PID: Esquema}
+\label{fig:PID}
+\end{figure}
+
+Como se puede observar en la figura \ref{fig:PID} en los controladores PID se dispone de 3 constantes.
+\begin{itemize}
+  \item $K_p$: constante que acompaña al error 
+  \item $K_i$: constante que acompaña a la integral del error 
+  \item $K_d$: constante que acompaña a la derivada del error
+  
+\end{itemize}
+\newpage
+\section{Práctica}
+Se ajustaron las constantes mediante el siguiente método:
+\begin{itemize}
+  \item Primero establecer $K_i=0$ y $K_d=0$. 
+  \item Incrementar la $K_p$ hasta que la salida oscile
+  \item Establecer $K_p$ a aproximadamente la mitad del valor configurado previamente
+  \item Incrementar $K_i$ hasta que el proceso se ajuste en el tiempo requerido (precaución: subir mucho I puede causar inestabilidad)
+  \item Finalmente, incrementar D si se necesita hasta que el lazo sea lo suficientemente rápido para alcanzar su referencia tras una variación brusca de la carga.
+ 
+\newpage
+\section{Resultados}
+ 
+  
+\end{itemize}
+ 
+
+\end{document}
