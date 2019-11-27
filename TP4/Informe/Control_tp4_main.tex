@@ -28,7 +28,7 @@
 
 \section{PID: Introducción teórica}
 Los controladores PID (proporcional, integrador y derivativo) proveen un control de lazo empleando feedback que es utilizado en la industria del control.
-Un controlador PID calcula el error e(t) como la diferencia entre el setpoint(deseada) y una variable medida del proceso (la salida de la planta).
+Un controlador PID calcula el error e(t) como la diferencia entre el setpoint (deseada) y una variable medida del proceso (la salida de la planta).
 
 
 \begin{figure}[H]
@@ -57,28 +57,59 @@ Como se puede observar en la figura \ref{fig:PID} en los controladores PID se di
 \end{figure}
 Se dispone del carrito de la Figura \ref{fig:carrito}, el cual posee un fototransistor y un par de leds en frente. Los leds generan radiación infraroja que se ve reflejada en la superficie que se encuentre enfrentada. Esta reflexión le da información al fototransistor sobre a qué distancia está el frente del carrito de la superficie. 
 
-El fototransistor se encuentra encerrado en un housing con una película oscura para reducir la perturbación de la luz visible. El fototransistor se encuentra encerrado en un housing con una película oscura para reducir la perturbación de la luz visible, siendo esta película transparente a la radiación infrarroja.
+El fototransistor se encuentra encerrado en un housing con una película oscura para reducir la perturbación de la luz visible, siendo esta película transparente a la radiación infrarroja.
 
 El carrito posee un motor de corriente continua que le permite desplazarse en una sola dirección pero en ambos sentidos dependiendo de la polaridad de la tensión entregada al motor.
 
-Se utilizó un microcontrolador tipo ARDUINO como ADC para la lectura del fototransistor. Luego de la lectura se pasa el valor a PWM y un pin es necesario para asignar el sentido. Estas dos señales van al puente H.
+Se utilizó un microcontrolador tipo Arduino como ADC para la lectura del fototransistor, cuya respuesta de tensión en función de la distancia tiene forma de gaussiana. Es decir, estando junto a la pared, la señal de salida es de aproximadamente 0V, y comienza a aumentar hasta llegar a un máximo a medida que se aleja de la pared, y luego disminuye nuevamente hasta 0V si se lo sigue alejando.
 
 \section{Modelo del carrito}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{images/SistemaFisico.JPG}
+\caption{Representación del sistema físico}
+\label{fig:carrito}
+\end{figure}
+Se busca encontrar la transferencia $\frac{Y(S)}{E_a(S)}$, siendo $Y(S)$ el desplazamiento lineal del carrito sobre una superficie plana. Del desarrollo y despeje provisto por la cátedra, se obtiene la función:
 
-\section{Control PID y Carrito}
+\[
+G(S) = \frac{Y(S)}{E_a(S)} = \frac{N \cdot K_m \cdot r}{R_a \cdot J_{eq} \cdot \left( S + \frac{K_b \cdot N^2 \cdot K_m}{R_a \cdot J_{eq}} \right) \cdot S}
+\]
 
-
+La cual caracteriza al sistema como segundo orden con un polo en el origen.
 
 \newpage
+\section{Control PID}
+
+El sistema realimentado con el control PID se muestra a continuación:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{images/bloquesPID.png}
+\caption{Sistema realimentado con compensador PID}
+\label{fig:carrito}
+\end{figure}
+
+Donde $G(S)$ es la transferencia del carrito $\frac{Y(S)}{E_a(S)}$ (siendo la posición respecto a la tensión de alimentación del motor), y la transferencia del controlador:
+
+\[
+G_{PID}(S) = K \cdot \frac{(S+Z_1)(S+Z_2)}{S}
+\]
+
+Para aplicar el control PID, se trabaja con el primer tramo inyectivo de la respuesta del fototransistor, es decir desde 0 hasta el máximo, buscando que el carrito se mantenga a una distancia intermedia entre esos dos puntos. El valor de tensión (que depende de la distancia) se muestrea con el ADC del Arduino, y es con el cual se realimenta al sistema.\par
+Para el control del motor, se utiliza la Placa Stepper para Arduino (AR-L298SHIELD), cuya implementación se trata con la librería L298.h. La señal realimentada que va al controlador PID restada a $R(S)$, se convierte luego en un valor de duty para la señal de PWM para la Placa Stepper.\par
+Las constantes $K_p$, $K_d$ y $K_i$ del controlador PID se ajustaron con la metodología descripta en la sección siguiente (dado que no se conocen los valores de la planta).
+
+
 \section{Método manual de ajuste}
 Se ajustaron las constantes mediante el método manual:
 \begin{itemize}
   \item Primero establecer $K_i=0$ y $K_d=0$. 
-  \item Incrementar la $K_p$ hasta que la salida oscile
-  \item Establecer $K_p$ a aproximadamente la mitad del valor configurado previamente
-  \item Incrementar $K_i$ hasta que el proceso se ajuste en el tiempo requerido (precaución: subir mucho I puede causar inestabilidad)
-  \item Finalmente, incrementar $K_d$ si se necesita hasta que el lazo sea lo suficientemente rápido para alcanzar su referencia tras una variación brusca de la carga.
+  \item Incrementar $K_p$ hasta que la salida oscile (es decir, el carrito presente un movimiento oscilatorio lo más armónico posible).
+  \item Establecer $K_p$ a aproximadamente la mitad del valor configurado previamente.
+  \item Incrementar $K_i$ hasta que el proceso se ajuste en el tiempo requerido (precaución: aumentar mucho $K_i$ puede causar la inestabilidad del sistema, ya que los polos a lazo cerrado se mueven por el lugar de raíces y puede pasar al semiplano derecho).
+  \item Finalmente, incrementar $K_d$ si se necesita hasta que el lazo sea lo suficientemente rápido para alcanzar su referencia tras una variación brusca de la carga. Para el sistema bajo análisis se corresponde con, por ejemplo, tener al carrito fijo a una distancia, y de manera repentina colocar la mano delante del fototransistor, lo cual cambia abrutamente la medición de distancia.
 
  
 \newpage
@@ -106,10 +137,6 @@ Se ajustaron las constantes mediante el método manual:
 
 
 \end{lstlisting}
-
- 
-\newpage
-\section{Resultados}
  
   
 \end{itemize}

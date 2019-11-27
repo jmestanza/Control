@@ -99,18 +99,19 @@ Para anular el error permanente se agrega delante un bloque de ganancia $K_{Prev
 \includegraphics[width=1\linewidth]{../Images/DiagramaFeedConKP.png}
 \end{figure}
 
-Para hallar las constantes de realimentación lineal se aplica el método de Ziegler-Nichols en el controlador a implementar (Ver en ), para luego comparar las mediciones que resultan con dichas constantes con la simulación.
+Para hallar las constantes de realimentación lineal se aplica el método de Ziegler-Nichols en el controlador a implementar, para luego comparar las mediciones que resultan con dichas constantes con la simulación.
 
 \newpage
 
 \section{Controlador Arduino - Código Fuente}
 Para realizar la realimentación lineal de estados, se implementó mediante un software en Arduino, cuyo código fuente se cita a continuación.\par
-El mapeo del potenciómetro para los extremos de $0^{\circ}$ a $180^{\circ}$ en el ADC resulta entre aproximadamente 490 y 740. Pasando estos valores a tensión, considerando que el ADC es de 10 bits resulta:
+El mapeo del potenciómetro para los extremos de $0^{\circ}$ a $180^{\circ}$ en el ADC (de 10 bits) resulta entre aproximadamente 490 y 740. Pasando estos valores a tensión, resulta:
 
 \[
 \frac{490 \cdot 5V}{1023} = 2.4V \hspace{2cm} \frac{740 \cdot 5V}{1023} = 3.6V
 \]
-Dichos valores equivalentes se utilizarán luego para verificar los extremos de las mediciones frente a entradas de diferentes señales.
+Dichos valores equivalentes se utilizarán luego para verificar los extremos de las mediciones frente a entradas de diferentes señales.\par
+Se mapean con otras dos entradas de ADC, la señal de entrada $E_a$ y la salida del tacómetro adaptada mediante un driver externo (ver diseño en la siguiente sección). Para simular el nodo sumador, se hace la resta de $E_a$ con las otras dos señales medidas: este resultado corresponde a la señal error, que configura directamente el duty de la señal de control del puente H.
 
 \begin{lstlisting}
 
@@ -232,7 +233,7 @@ Se utilizó la Placa Stepper para Arduino (AR-L298SHIELD), para lo cual se utili
 
 \subsection{Potenciómetro (Posición)}
 
-Para el potenciómetro que permite medir la posición angular del motor, se lo alimenta con 6V y se conecta la salida a una de las entradas analógicas de Arduino (A1):
+Para el potenciómetro que permite medir la posición angular del motor, se lo alimenta con 6V y se conecta la salida a una de las entradas analógicas de Arduino (A1) en forma directa:
 
 \begin{figure}[H]
 \centering
@@ -240,7 +241,7 @@ Para el potenciómetro que permite medir la posición angular del motor, se lo a
 \end{figure}
 
 \subsection{Tacómetro (Velocidad)}
-Para adaptar la señal del tacómetro, dado que provee valores entre -5V y +5V, se implementó con un amplificador operacional una función lineal, tal que la salida se mapee al intervalo de 0V a 5V (que es el rango admitido por el Arduino).\par
+Para adaptar la señal del tacómetro, dado que provee valores entre -5V y +5V, se implementó con un amplificador operacional una función lineal, tal que la salida se mapee al intervalo de 0V a 5V (que es el rango admitido por el Arduino), alimentándolo entre $\pm 10V$: \par
 
 \begin{figure}[H]
 \centering
@@ -356,6 +357,6 @@ Se ingresa finalmente al controlador Arduino con una señal senoidal de entre 0V
 \caption{Respuesta a la senoidal medida - Detalle de la medición (mediante exportación de CSV)}
 \end{figure}
 
-Al igual que para la triangular, se observa que el sistema sigue a la señal con un error permanente aproximadamente constante (debido a la baja frecuencia utilizada), pero formalmente no es exactamente así. En el caso simulado puede apreciarse más como resulta realmente: en el primer cuarto de período, la senoidal crece de manera no lineal en forma exponencial, por lo cual el sistema trata de seguirla pero se alejan (y continuaría alejándose de la parábola si ésta siguiera creciendo), resultando un error permanente infinito desde el punto de vista teórico. Como luego la senoidal sigue su forma y el el cuarto de ciclo siguiente la onda deja de crecer en forma exponencial negativa, le permite al sistema reacoplarse a la misma, compensando el error producido al principio. Luego, en el siguiente cuarto de ciclo, la senoidal comienza a disminuir en forma exponencial creciente, produciéndose el mismo fenómeno que en el primer cuarto de ciclo (el sistema dejaría de seguirla). Finalmente, en el último cuarto de ciclo, la senoidal decrece pero disminuyendo la pendiente (como en el segundo cuarto de ciclo), permitiendo al sistema reacoplarse frente a la separación producida en el cuarto de ciclo anterior. Como la señal es periódica en el tiempo, esto se repite indefinidamente.
+Al igual que para la triangular, se observa que el sistema sigue a la señal con un error permanente aproximadamente constante (debido a la baja frecuencia utilizada), pero formalmente no es exactamente así. En el caso simulado puede apreciarse más como resulta realmente: en el primer cuarto de período, la senoidal crece de manera no lineal en forma exponencial (la derivada va en aumento), por lo cual el sistema trata de seguirla pero se alejan (y continuaría alejándose de la parábola si ésta siguiera creciendo), resultando un error permanente infinito desde el punto de vista teórico. Como luego la senoidal sigue su forma y el el cuarto de ciclo siguiente la onda deja de crecer en forma exponencial negativa (la derivada decrece), le permite al sistema reacoplarse a la misma, compensando el error producido al principio. Luego, en el siguiente cuarto de ciclo, la senoidal comienza a disminuir en forma exponencial creciente, produciéndose el mismo fenómeno que en el primer cuarto de ciclo (el sistema dejaría de seguirla). Finalmente, en el último cuarto de ciclo, la senoidal sigue decreciendo pero disminuyendo la pendiente (como en el segundo cuarto de ciclo), permitiendo al sistema reacoplarse frente a la separación producida en el cuarto de ciclo anterior. Como la señal es periódica en el tiempo, esto se repite indefinidamente, siguiendo el sistema a la señal en cuestión.
 
 \end{document}
