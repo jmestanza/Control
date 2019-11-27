@@ -117,15 +117,15 @@ Se ajustaron las constantes mediante el método manual:
 \begin{lstlisting}
 
 #include <L298N.h>
-#include <PID_v1.h>
+#include<PID_v1.h>
 
 void setMotorSpeed(int s);
 
 #define PH_EN 10
 #define PH_INA 9
 #define PH_INB 8
-#define KP 1.6 // Valor de oscilatorio 3.2 con KD y KI en 0
-#define KI 0.3
+#define KP 1.4 // Valor de oscilatorio 3.2 con KD y KI en 0
+#define KI 0.4
 #define KD 0.1
 
 double sp = 307; // Set point del sistema
@@ -151,9 +151,9 @@ void loop() {
 
 void setMotorSpeed(int s){
   if(s>128){
-    s=255;
+    s=128;
   }else if(s<-128){
-    s=-255;
+    s=-128;
   }
 
   // Seteo velocidad y direccion
@@ -166,11 +166,8 @@ void setMotorSpeed(int s){
   }
 }
 
-
 \end{lstlisting}
  
   
 \end{itemize}
- 
-
 \end{document}
