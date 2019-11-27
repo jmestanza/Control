@@ -117,23 +117,54 @@ Se ajustaron las constantes mediante el método manual:
 \begin{lstlisting}
 
 #include <L298N.h>
-// Libreria para el manejo de la Placa Stepper
+#include <PID_v1.h>
 
-#define ADC_MID_RANGE 512 // El rango total es 1024, lo que hace es considerar el offset de la se\~nal a 2.5V
-#define PIN_ENABLE 10 // 
-#define PIN_IN1 9
-#define PIN_IN2 8
+void setMotorSpeed(int s);
 
-#define K_PREV 2.5
+#define PH_EN 10
+#define PH_INA 9
+#define PH_INB 8
+#define KP 1.6 // Valor de oscilatorio 3.2 con KD y KI en 0
+#define KI 0.3
+#define KD 0.1
 
-#define LIM_SUP 740
-#define LIM_INF 490
+double sp = 307; // Set point del sistema
+double in = 0; // Medicion de la salida del sistmea - la realimentacion 
+double out=0; // Entrada a la planta
 
-#define K_TACH 1.5
+L298N canalA(PH_EN,PH_INA,PH_INB);
+PID myPID(&in, &out, &sp,KP,KI,KD, REVERSE);
 
-// Constantes para realimentacion lineal de estados
-#define K_FI 1
-#define K_W 1
+void setup() {
+ myPID.SetMode(AUTOMATIC);//turn the PID on
+ myPID.SetOutputLimits(-255,255);
+ myPID.SetSampleTime(10);//10ms de sampleo
+}
+
+void loop() {
+  in = analogRead(0);
+  myPID.Compute();
+  setMotorSpeed(out);
+  Serial.println(out);
+  
+}
+
+void setMotorSpeed(int s){
+  if(s>128){
+    s=255;
+  }else if(s<-128){
+    s=-255;
+  }
+
+  // Seteo velocidad y direccion
+  if(s<0){
+    canalA.setSpeed(-s);
+    canalA.forward();   
+  }else if(s<256){
+    canalA.setSpeed(s);
+    canalA.backward();    
+  }
+}
 
 
 \end{lstlisting}
