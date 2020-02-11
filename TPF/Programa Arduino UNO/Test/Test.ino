@@ -1,14 +1,26 @@
-//// TPF - 22.85 SisteMYAWs de Control 
+//// TPF - 22.85 Sistemas de Control 
 
+#include<PID_v1.h>
+
+#define KP 1.6 // Valor de oscilatorio 0.8 con KD y KI en 0
+#define KI 0.8
+#define KD 0.5
+
+double aux = 0;
+double sp = 500;
+double in = 0;
+double out = 0; 
+
+PID myPID(&in , &out , &sp ,KP,KI ,KD, REVERSE);
 // ADC
-#define MYAWNUAL_PITCH A0
-#define MYAWNUAL_YAW A1
+#define MANUAL_PITCH A0
+#define MANUAL_YAW A1
 #define SIGNAL_YAW A2
 #define SIGNAL_PITCH A3
-#define YAW_IN A4 // Rango: 160 - 900
-#define PITCH_IN A5 // Rango: 160 - 840
+#define YAW_IN A4 // Rango: 320 - 1000
+#define PITCH_IN A5 // Rango: 200 - 700
 
-// Puente H - MYAWximo Duty en 200
+// Puente H - Maximo Duty en 200
 #define ENA 11
 #define IN1 10
 #define IN2 9
@@ -23,22 +35,22 @@ void setup() {
   
   initADC();
   initPuenteH();
+  myPID.SetMode(AUTOMATIC); 
+  myPID.SetOutputLimits(-255 ,255);
+  myPID.SetSampleTime(10);
 
-  setForward(MYAW);
-  setMotorSpeed(MYAW, 195);
-  
   //Serial.begin(9600);
 }
 
 void loop() {
-  //int val = analogRead(YAW_IN);
-  //Serial.print("YAW = ");
-  //Serial.println(val);
   
-  //int val2 = analogRead(PITCH_IN);
-  //Serial.print("PITCH = ");
-  //Serial.println(val2);
-
+  in = analogRead(PITCH_IN);
+  aux = analogRead(MANUAL_PITCH);
+  sp = ((aux*500)/1023) + 200;
+  //Serial.println(analogRead(YAW_IN));
+  myPID.Compute();
+  configMotor(MPITCH, out);
+  
 }
 
 void initADC() {
@@ -93,5 +105,23 @@ void setMotorSpeed(int motor, int value) { // 0 - 255
   }
   else if(motor == MPITCH) {
     analogWrite(ENB, value);
+  }
+}
+
+void configMotor(int motor, int param) {
+  if(param > 190) {
+    param = 190;
+  }
+  else if(param < 190) { 
+    param = -190;
+  }
+
+  if(param > 0) {
+    setBackward(motor);
+    setMotorSpeed(motor, param);
+  }
+  else if(param < 0) {
+    setForward(motor);
+    setMotorSpeed(motor, -param);
   }
 }
