@@ -1,0 +1,32 @@
+\documentclass{article}
+
+% preambulo:
+\input{control_tpf_preamble.tex}
+
+
+\begin{document}
+
+\newgeometry{} % margenes default para la caratula
+% caratula:
+\input{control_tpf_caratula.tex}
+
+% indice:
+\tableofcontents
+\newpage
+
+
+% cambio los margenes para el resto del documento
+\newgeometry{total={6in, 8in}}
+
+\subfile{control_tpf_ej1.tex}
+\clearpage % flush de los floats que queden y nueva pagina
+\subfile{control_tpf_ej2.tex}
+\clearpage
+\subfile{control_tpf_ej3.tex}
+\clearpage
+\subfile{control_tpf_ej4.tex}
+\clearpage
+\subfile{control_tpf_ej5.tex}
+
+
+\end{document}
