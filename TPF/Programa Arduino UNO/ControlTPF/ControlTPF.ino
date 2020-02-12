@@ -109,7 +109,6 @@ void loop() {
   spY = ((aux*700)/1023) + 200;
   
   PID_cycle(spP, sensorReadP, &plantInputP, spY, sensorReadY, &plantInputY);
-  
   configMotor(MPITCH, -plantInputP);
   configMotor(MYAW, -plantInputY);
 

@@ -20,7 +20,7 @@
 
 \section{Introducción}
 
-En el presente trabajo práctico se implementó un sistema para simular el control aerodinámico similar a un helicóptero, es decir con 2 DOF (dos grados de libertad), sobre una base fija.\\
+En el presente trabajo práctico se implementó un sistema para simular el control aerodinámico similar a un helicóptero, es decir con 2 DOF (dos grados de libertad), sobre una base fija.\par
 El montaje del sistema se realizó de manera artesanal, sobre un taller propio con los elementos disponibles, y el control digital se implementó utilizando un Arduino.\\
 
 \begin{figure}[H]
@@ -127,7 +127,7 @@ T_M = J \cdot \theta_Y \cdot S^2 + B \cdot \theta_Y \cdot S + K_C \cdot \theta_Y
 
 Para realizar el control digital, se utilizó un Arduino Uno, más la placa Puente H con L298 provista también por dicho fabricante para el control de los motores. Esto último fue necesario dado que ambos motores juntos en máxima potencia llegan a 1.5A de consumo total aproximadamente.\par
 Los potenciómetros de posición, más los de ajuste manual y las entradas de señal externas para efectuar mediciones se conectaron a las entradas ADC del Arduino. Para el control del Puente H, se utilizaro otras 6 salidas digitales (3 para cada motor).\par
-Se utilizó en principio un control proporcional derivativo (PD, para tener una respuesta más rápida del sistema). Pero dado que posee mucho error permanente (como se explicará luego), se añadió control integrativo, teniendo finalmente un control PID. Para hallar las constantes, el método utilizado consiste en anular KD y KI, y comenzar a aumentar KP hasta que el sistema comience a oscilar. Luego se setea la mitad del valor oscilatorio, y se aumenta KD para mejorar el tiempo de respuesta del sistema. Finalmente, se ajusta KI para eliminar el error permamente.\par 
+Se utilizó en principio un control proporcional derivativo (PD, para tener una respuesta más rápida del sistema). Pero dado que posee mucho error permanente (como se explicará luego), se añadió control integrativo, teniendo finalmente un control PID. Para hallar las constantes, el método utilizado consiste en anular KD y KI, y comenzar a aumentar KP hasta que el sistema comience a oscilar. Luego se setea la mitad del valor oscilatorio, y se aumenta KD para mejorar el tiempo de respuesta del sistema. Finalmente, se ajusta KI para eliminar el error permamente. Esto se realizó para cada sistema, es decir primero para el Pitch, y luego para el Yaw.\par 
 
 
 
