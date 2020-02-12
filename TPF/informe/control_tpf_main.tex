@@ -3,20 +3,20 @@
 % preambulo:
 \input{control_tpf_preamble.tex}
 
-
 \begin{document}
 
 \newgeometry{} % margenes default para la caratula
 % caratula:
 \input{control_tpf_caratula.tex}
 
+
+% cambio los margenes para el resto del documento
+\newgeometry{top=2.5cm, bottom=2.0cm, left=2.25cm, right=2.25cm}
+
 % indice:
 \tableofcontents
 \newpage
 
-
-% cambio los margenes para el resto del documento
-\newgeometry{total={6in, 8in}}
 
 \section{Introducción}
 
@@ -40,7 +40,7 @@ Por el centro de dicha barra de madera se hace pasar una barra de metal liviano,
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\linewidth]{images/rotor.jpg}
+\includegraphics[width=0.3\linewidth]{images/rotor.jpg}
 \caption{Barra de madera y eje}
 \end{figure}
 
@@ -49,7 +49,7 @@ La barra de metal va colocada sobre sus extremos a un soporte en forma de 'U', s
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\linewidth]{images/preMontaje.jpg}
+\includegraphics[width=0.3\linewidth]{images/preMontaje.jpg}
 \caption{Modelo semiterminado}
 \end{figure}
 
@@ -76,26 +76,66 @@ El conjunto queda apoyado sobre una base de madera, ajustando la pieza circular 
 \end{figure}
 
 \subsection{Sistema mecánico}
-Teniendo los factores constructivos previamente mencionados, se realiza el siguiente modelo mecánico:
+Teniendo los factores constructivos previamente mencionados, se procede a realizar el modelo mecánico. Para simplificar el análisis, como se observará luego el movimiento sobre ambos ejes por separado, se modelan dos sistemas.\par
+Tomando el caso del sistema para regular el Pitch, se considera por un lado el momento de inercia de los motores más el de la barra de madera y la de metal (que hace de eje). Ambos está sometidos a un cierto roce dado por el ruleman y el eje del potenciómetro (dado que están adosados). Y también a una cierta elasticidad producida por los cables al intentar girar de extremo a extremo. Esto puede modelarse como sigue:
 
-PONER FOTO, HACER DIBUJO
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/modelPitch.png}
+\caption{Modelo mecánico para el sistema de Pitch}
+\end{figure}
 
-Notar que la particularidad de este sistema, es que posee dos variables de salida a controlar (cada una con uno de los potenciómetros). Planteando las ecuaciones físicas:
+Del cual se puede obtener la función transferencia de segundo orden entre el torque producido por el motor y el ángulo de gior (Pitch). Considerando J como el conjunto de los momentos de inercia y B para el rozamiento total:
 
-PONER ECUACIONES
+\[
+T_M = J \cdot \ddot{\theta_P} + B \cdot \ddot{\theta_P} + K_C \cdot \theta_P
+\]
 
-Se acomodan las variables de interés, de manera de obtener el espacio de estados matricial:
+\[
+T_M = J \cdot \theta_P \cdot S^2 + B \cdot \theta_P \cdot S + K_C \cdot \theta_P
+\]
 
-PONER ESPACIO DE ESTADOS Y SI PUEDO LAS ECUACIONES ACOMODADAS 
+\[
+\frac{\theta_P}{T_M} = \frac{1}{J \cdot S^2 + B \cdot S + K_C}
+\]
+
+Para el caso de Yaw, se puede modelar de manera similar. Se tienen los momentos de inercia del otro motor, más el de la barra de madera con su eje y se añade la 'U'. Esta esta sometida en su eje al roce dado por el otro ruleman y el otro potenciómetro para medir posición. Por otra parte también es modificada por una cierta elasticidad dada por los cables de interconexión, que como se verá más adelante afectarán al movimiento horizontal. Teniendo esto en cuenta, el modelo a utilizar es similar, con las variables correspondientes:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/modelYaw.png}
+\caption{Modelo mecánico para el sistema de Yaw}
+\end{figure}
+
+Del cual se puede obtener la función transferencia entre el ángulo de rotación y el torque producido por el motor:
+
+\[
+T_M = J \cdot \ddot{\theta_Y} + B \cdot \ddot{\theta_Y} + K_C \cdot \theta_Y
+\]
+
+\[
+T_M = J \cdot \theta_Y \cdot S^2 + B \cdot \theta_Y \cdot S + K_C \cdot \theta_Y
+\]
+
+\[
+\frac{\theta_Y}{T_M} = \frac{1}{J \cdot S^2 + B \cdot S + K_C}
+\]
 
 \newpage
 
 \section{Implementación en Arduino}
-// aca es el codigo y como medimos las cosas, explicar tambien lo del puente H, que es un l298 hacia falta por la corriente y demas, y el hallado de las constantes por el metodo de los 5 oscilantes
+
+Para realizar el control digital, se utilizó un Arduino Uno, más la placa Puente H con L298 provista también por dicho fabricante para el control de los motores. Esto último fue necesario dado que ambos motores juntos en máxima potencia llegan a 1.5A de consumo total aproximadamente.\par
+Los potenciómetros de posición, más los de ajuste manual y las entradas de señal externas para efectuar mediciones se conectaron a las entradas ADC del Arduino. Para el control del Puente H, se utilizaro otras 6 salidas digitales (3 para cada motor).\par
+Se utilizó en principio un control proporcional derivativo (PD, para tener una respuesta más rápida del sistema). Pero dado que posee mucho error permanente (como se explicará luego), se añadió control integrativo, teniendo finalmente un control PID. Para hallar las constantes, el método utilizado consiste en anular KD y KI, y comenzar a aumentar KP hasta que el sistema comience a oscilar. Luego se setea la mitad del valor oscilatorio, y se aumenta KD para mejorar el tiempo de respuesta del sistema. Finalmente, se ajusta KI para eliminar el error permamente.\par 
+
+
 
 \newpage
 
 \section{Placa de interconexionado}
+
+\subsection{Interfaces}
 
 Para facilitar el conexionado al Arduino, se realizó una placa que actúa de interfaz entre este y el resto del sistema. Sobre ella se facilitan los siguientes elementos:
 
@@ -109,6 +149,8 @@ Para facilitar el conexionado al Arduino, se realizó una placa que actúa de in
 \item Conectores polarizados para conectar las señales de control (PWM y las dos que determinan el sentido de giro) desde ésta placa hacia el Puente H.
 \end{itemize}
 
+\subsection{Modelo PCB}
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{images/cobre.png}
@@ -119,13 +161,49 @@ Para facilitar el conexionado al Arduino, se realizó una placa que actúa de in
 
 \section{Mediciones}
 
+\subsection{Pitch - Respuesta al escalón}
 
+Para observar el tiempo de respuesta del sistema, se ingresó con una señal cuadrada de 0.1Hz a las entradas de control manual de Pitch y Yaw, en experimentos separados.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/escalonPitch.jpeg}\caption{Medición de Pitch - Respuesta al escalón}
+\end{figure}
+
+Se tiene a partir de la medición de extremo a extremo que el tiempo para establecerse al subir es de aproximadamente 1 segundo, y posee un pequeño amortiguamiento donde se acomoda al punto seteado (dado que se pasó un poco). El movimiento tiene una pendiente suave, dado que el peso de la barra está en oposición a éste.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/escalonInversoPitch.jpeg}\caption{Medición de Pitch - Respuesta al escalón}
+\end{figure}
+
+En el caso de la bajada, ésta resulta más abrupta, dado que el peso de la barra de madera contribuye en esa dirección. Al igual que en la subida, se pasa un poco del punto seteado y vuelve a subir un poco para alinearse.
+
+\subsection{Yaw - Respuesta al escalón}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/escalonYaw.jpeg}\caption{Medición de Yaw - Respuesta al escalón}
+\end{figure}
+
+Se tiene a partir de la medición de extremo a extremo que, en este eje afecta más la inercia de la estructura en forma de 'U', obteniendo un tiempo de respuesta de aproximadamente 2 segundos. En este caso la hélice gira en el sentido normal, es decir en favor de su curvatura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/escalonInversoYAW.jpeg}\caption{Medición de Yaw - Respuesta al escalón}
+\end{figure}
+
+En este caso, se obtiene una respuesta más lenta, dado que la hélice gira en sentido opuesto al normal, es decir en contra de su curvatura. Esto produce que el empuje máximo que puede generar es menor. Notar que le demanda casi todo el período llegar a establecerse en el punto de seteo.
 
 \newpage
 
 \section{Conclusiones}
 
-los factores de inercia y roce son los que mas afectaron, y los cables que frenaban tambien, lo de las helices tambien, mejoras que se podrian hacer, motores mas potentes
+A partir de efectuar varias pruebas se pudieron observar tanto puntos a favor como limitaciones del diseño.\par
+Por un lado, en el caso del giro horizontal (Yaw), además de la limitación del sentido de giro de la hélice, la estructura ofrece mayor inercia en comparación a la barra de madera para el movimiento vertical (Pitch). Puede mejorarse esto con motores de mayor cantidad de RPM, y de ser posible con hélices que admitan giro en ambos sentidos por igual.\par
+Ambos movimientos resultaban también afectados por los cables de conexión para los motores y el potenciómetro de medición de Pitch, dado su grosor. Una manera de mejorar esto es utilizar cables más blandos/finos, dado que los motores no poseen un gran consumo de corriente.\par
+Por otra parte, el tamaño reducido y los rulemanes permiten en general que la estructura tenga un movimiento suave en ambos ejes, teniendo como topes únicamente los límites de los potenciómetros. Para un setpoint fijo, se observó que el sistema alcanza rápidamente el punto de equilibrio si se lo desbalancea manualmente.
 
 \newpage
 
@@ -134,5 +212,6 @@ los factores de inercia y roce son los que mas afectaron, y los cables que frena
 \item Idea para la maqueta: https://www.quanser.com/products/quanser-aero/
 \item Funcionamiente básico y conexiones de la placa Puente H: https://www.prometec.net/l298n/ 
 \item Motores con hélices: https://monarcaelectronica.com.ar/productos/motor-con-helice-12x20mm-dc-37v-25000rpm-mona/
+\item Control PID Digital (Apuntes de clase)
 \end{itemize}
 \end{document}

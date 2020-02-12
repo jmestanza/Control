@@ -4,6 +4,10 @@
 \BOOKMARK [2][-]{subsection.2.2}{Sistema mec\341nico}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{Implementaci\363n en Arduino}{}% 5
 \BOOKMARK [1][-]{section.4}{Placa de interconexionado}{}% 6
-\BOOKMARK [1][-]{section.5}{Mediciones}{}% 7
-\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 8
-\BOOKMARK [1][-]{section.7}{Bibliograf\355a}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Interfaces}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Modelo PCB}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Mediciones}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Pitch - Respuesta al escal\363n}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Yaw - Respuesta al escal\363n}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 12
+\BOOKMARK [1][-]{section.7}{Bibliograf\355a}{}% 13

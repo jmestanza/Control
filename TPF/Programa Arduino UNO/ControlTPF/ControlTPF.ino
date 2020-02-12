@@ -1,6 +1,6 @@
-//// TPF - 22.85 Sistemas de Control 
+//// TPF - 22.85 Sistemas de Control ////
 
-// ADC
+// ADC //
 #define MANUAL_PITCH A0
 #define MANUAL_YAW A1
 #define SIGNAL_YAW A2
@@ -8,7 +8,7 @@
 #define YAW_IN A4 // Rango: 200 - 900
 #define PITCH_IN A5 // Rango: 200 - 700
 
-// Puente H - Maximo Duty en 200
+// Puente H - Maximo Duty en 200 //
 #define ENA 11
 #define IN1 10
 #define IN2 9
@@ -19,69 +19,61 @@
 #define MYAW 0
 #define MPITCH 1
 
-// Control PID
-/* PERIODO SAMPLEO */
+// Control PID //
+// Tiempo de sampleo
 #define Ts_ms 10.0  //en milisegundos
 #define Ts (Ts_ms/1e3) //en segundos
 
-/* CONSTANTES PID */
+// Constantes de control para ambas salidas
+// Pitch
 #define _KpP 2.0
 #define _KiP 2.4
 #define _KdP 0.5
-
+// Yaw
 #define _KpY 2.0
 #define _KiY 2.0
 #define _KdY 0.4
-
+// Pitch
 float KpP = _KpP;
 float KiP = _KiP * Ts;
 float KdP = _KdP / Ts;
-
+// Yaw
 float KpY = _KpY;
 float KiY = _KiY * Ts;
 float KdY = _KdY / Ts;
 
-/* LIMITES LECTURA SENSOR */
+// Limites de los potenciometros
+// Pitch
 #define SENSOR_READ_P_MIN 200
 #define SENSOR_READ_P_MAX 700
-
+// Yaw
 #define SENSOR_READ_Y_MIN 200
 #define SENSOR_READ_Y_MAX 900
 
-/* LIMITES VELOCIDAD GIRO HELICE */
-//Duty de PWM para lograr las velocidades
+// Extremos de velocidades para motor
 #define MOTOR_SPEED_MIN -255
 #define MOTOR_SPEED_MAX 255
 
-/* PARA CONTROL DE DELAY */
+// Control de delay
 unsigned long lastReadyTime;
 
-/* ENTRADA DE LA PLANTA */
+// Variables de entrada al sistema
 unsigned int prevPIDoutput_P = 0;
 unsigned int prevPIDoutput_Y = 0;
 
-
-/* LECTURA DEL SENSOR */
+// Valores de los sensores
 int sensorReadP = 500;
 int sensorReadY = 500;
 
-/* SET POINT - POSICION DESEADA */
+// Setpoint para ambos ejes inicial
 int setPointP = 500;
 int setPointY = 500;
 
+// Variables de control
 int plantInputP = 0;
 int plantInputY = 0;
 
-/* ESTADO DE MOTOR */
-bool motor_on = true;
-
-/*
-   iAmReady:
-   Devuelve true:
-   1) La primera vez que se llama.
-   2) Si sucedieron mas de Ts milisegundos desde la ultima vez que devolvio true.
-*/
-bool iAmReady();
+bool waitLoop();
 
 void PID_cycle(int setPointP, int sensorReadP, int *plantP, 
                int setPointY, int sensorReadY, int *plantY);
@@ -103,7 +95,7 @@ void loop() {
 
 
   //ESPERAR QUE HAYAN SUCEDIDO TS MILISEGUNDOS
-  while(!iAmReady()){}
+  while(!waitLoop()){}
 
   //OBTENER SALIDA DE LA PLANTA
   sensorReadP = analogRead(PITCH_IN);
@@ -115,7 +107,7 @@ void loop() {
   spP = ((aux*500)/1023) + 200;
   aux = analogRead(MANUAL_YAW);
   spY = ((aux*700)/1023) + 200;
-  //CALCULAR LA ENTRADA A LA PLANTA Y MANDAR POR PWM 
+  
   PID_cycle(spP, sensorReadP, &plantInputP, spY, sensorReadY, &plantInputY);
   
   configMotor(MPITCH, -plantInputP);
@@ -206,28 +198,24 @@ void PID_cycle(int setPointP, int sensorReadP, int *plantP,
   static float integralTerm = MOTOR_SPEED_MIN;
   float proportionalTerm;
   float derivativeTerm;
-  
-  //Si la lectura del sensor esta fuera de rango, usar la anterior
-  //if ( sensorRead < SENSOR_READ_MIN || sensorRead > SENSOR_READ_MAX ) { sensorRead = prevSensorRead; }
+ 
 
 
   // PITCH //
   float error = setPointP - sensorReadP;
 
-  /******************************/
-  /* Calculo de los 3 terminos: */
-  /******************************/
+  // Calculo de los parametros para Pitch
   //(P)
   proportionalTerm = KpP * error;
   //(D)
 #ifdef DERIVATIVE_MEASUREMENT
-  derivativeTerm = KdP * (-sensorReadP - (-prevSensorReadP)); //no considera setPoint para evitar "Derivative Kick"
+  derivativeTerm = KdP * (-sensorReadP - (-prevSensorReadP)); 
 #else
   derivativeTerm = KdP * (error - prevErrorP);
 #endif
   //(I)
   integralTerm += KiP * error;
-  /******************************/
+  
   
   prevErrorP = error;
   int outputP = proportionalTerm + integralTerm + derivativeTerm;
@@ -235,7 +223,7 @@ void PID_cycle(int setPointP, int sensorReadP, int *plantP,
   if(outputP > MOTOR_SPEED_MAX) outputP = MOTOR_SPEED_MAX;
 
 
-  //backup de valores para la proxima iteracion
+  // Guardo los valores para el siguiente procesamiento
   prevSensorReadP = sensorReadP;
   *plantP = outputP;
 
@@ -243,20 +231,18 @@ void PID_cycle(int setPointP, int sensorReadP, int *plantP,
 
   error = setPointY - sensorReadY;
 
-  /******************************/
-  /* Calculo de los 3 terminos: */
-  /******************************/
+  // Calculo de parametros para Yaw
   //(P)
   proportionalTerm = KpY * error;
   //(D)
 #ifdef DERIVATIVE_MEASUREMENT
-  derivativeTerm = KdY * (-sensorReadY - (-prevSensorReadY)); //no considera setPoint para evitar "Derivative Kick"
+  derivativeTerm = KdY * (-sensorReadY - (-prevSensorReadY)); 
 #else
   derivativeTerm = KdY * (error - prevErrorY);
 #endif
   //(I)
   integralTerm += KiY * error;
-  /******************************/
+
   
   prevErrorY = error;
   int outputY = proportionalTerm + integralTerm + derivativeTerm;
@@ -264,22 +250,22 @@ void PID_cycle(int setPointP, int sensorReadP, int *plantP,
   if(outputY > MOTOR_SPEED_MAX) outputY = MOTOR_SPEED_MAX;
 
 
-  //backup de valores para la proxima iteracion
+  // Guardo los valores para el siguiente procesamiento
   prevSensorReadY = sensorReadY;
   *plantY = outputY;
 }
 
-bool iAmReady()
+bool waitLoop()
 {
   static bool firstTime = true;
-  if (firstTime) //Primera vez que se llama
+  if (firstTime) 
   {
     lastReadyTime = millis();
     firstTime = false;
     return true;  
   }
   unsigned long currentTime = millis();
-  if(currentTime >= lastReadyTime + Ts_ms) //Sucedieron mas de Ts milisegundos desde la ultima vez que devolvio true
+  if(currentTime >= lastReadyTime + Ts_ms)
   {
     lastReadyTime = currentTime;
     return true;  
